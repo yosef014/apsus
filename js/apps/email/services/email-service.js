@@ -20,7 +20,7 @@ function getEmailsList(){
     
     APPSUS was built by Almog Lemberg and Gali Nickel as a part of the Coding Academy fullstack bootcamp.
     You can read more about us in our 'About' page.`,
-            isRead: false, sentAt: Date.now(),
+            isRead: false, sentAt: Date.now(),isFavorite: true,
             id: '15511339305941234174'
         },
 
@@ -28,7 +28,7 @@ function getEmailsList(){
             folder: 'inbox', subject: 'Discover next-generation slideshows‏', from: 'Canva', to: 'me',
             body: `Fromthe boardroom to the classroom to your living room, our Slideshow Videos are the perfect way 
     to introduce your team, say happy birthday to a classmate, or show family and friends your favorite holiday snaps. Simply pick a template, add animation, text effects, video clips, music, and more to have your audience glued to the screen from start to finish.`,
-            isRead: false, sentAt: 1614362113000, id: '1614273355adfd'
+            isRead: false, sentAt: 1614362113000,isFavorite: true, id: '1614273355adfd'
         },
     
         {
@@ -36,7 +36,7 @@ function getEmailsList(){
             from: 'Gali', to: 'me',
             body: `Hey Almog! i'm just checking up how the sprint work is going for you
     let me know if you want to have a zoom meeting and catch up :)`,
-            isRead: true, sentAt: 1614193632740,
+            isRead: true, sentAt: 1614193632740,isFavorite: true,
             id: '15511339305941234567'
         },
         
@@ -44,7 +44,7 @@ function getEmailsList(){
             folder: 'inbox', subject: `[New collection] International Women’s Day 2021‏
         `, from: 'Depositpics', to: 'me', body: `International Women’s Day is coming up soon! Explore our 2021 collection celebrating a special day around the world with inspiring visuals and some of the newest files from the Depositphotos library.
             Kind regards, The Depositphotos Team.
-        `, isRead: true, sentAt: 1612790413000, id: '1614172813000er'
+        `, isRead: true, sentAt: 1612790413000,isFavorite: true, id: '1614172813000er'
         },
         {
             folder: 'inbox', subject: 'Almog, thanks for being a valued member', from: 'LinkedIn', to: 'me',
@@ -68,7 +68,7 @@ function getEmailsList(){
         
         Sincerely,
             Liza and the LinkedIn Premium Team`,
-            isRead: true, sentAt: 1611780545000, id: '1611780545000aa'
+            isRead: true, sentAt: 1611780545000,isFavorite: false, id: '1611780545000aa'
         },
         {
             folder: 'sent', subject: 're: How are you?',
@@ -80,7 +80,7 @@ function getEmailsList(){
                 -------------------------------------------------------------
                 Hey Almog! i'm just checking up how the sprint work is going for you
                 let me know if you want to have a zoom meeting and catch up :)`,
-            isRead: true, sentAt: 1614193632840,
+            isRead: true, sentAt: 1614193632840,isFavorite: false,
             id: '15511339305941234598'
         },
         {
@@ -99,7 +99,7 @@ function getEmailsList(){
     ​​See you next month!
             ​​The Zeplin Crew        
             `,
-            isRead: true, sentAt: 1611515895000,
+            isRead: true, sentAt: 1611515895000,isFavorite: true,
             id: '15511339308001234444'
         },
         {
@@ -114,7 +114,7 @@ function getEmailsList(){
     Our programs are created in collaboration with top companies like AWS, BMW, Google, IBM and Microsoft,meaning that you’ll be learning the latest in-demand skills designed for workplace application.
     Enroll no‍w to take advantage of our new student deals! Use coupon code SAVE50 at checkout.
     `,
-            isRead: true, sentAt: 1609277825000,
+            isRead: true, sentAt: 1609277825000,isFavorite: false,
             id: '15511339308001234567'
         },
         {
@@ -125,7 +125,7 @@ function getEmailsList(){
         
     Your order was shipped due to the shipping option you chose - untracked, by the postal service. If you´re satisfied with the products, don´t forget to leave a review."        
     `,
-            isRead: true, sentAt: 1597519698000,
+            isRead: true, sentAt: 1597519698000,isFavorite: true,
             id: '15511339307001234567'
         },
         {
@@ -144,7 +144,7 @@ function getEmailsList(){
     Complete these steps now to protect your account.
     Change your password. You'll be logged out of all your active Twitter sessions except the one you'reusing at this time.
     Review the apps that have access to your account and revoke access to any unfamiliar apps.`,
-            isRead: true, sentAt: 1551133930500,
+            isRead: true, sentAt: 1551133930500,isFavorite: false,
             id: '115511339305001234567'
         },
         {
@@ -154,7 +154,7 @@ function getEmailsList(){
             body: `Hey Gali, I pushed a new commit to git, can you check it out?
     let me know what you think about the CSS changes I made on the header and in the email details.
     Thank you!`,
-            isRead: true, sentAt: 1614372914000,
+            isRead: true, sentAt: 1614372914000,isFavorite: false,
             id: '15511339308031234567'
         }
     ]

@@ -1,8 +1,19 @@
+
+
 table, th, td {
     border: 1px solid black;
-    border-collapse: collapse;
-  }
-
+    text-align: left;
+    font-family: 'Robert'; 
+ }
+th img{
+    height: 20px;
+    width: 20px;
+}
   .unread{
-    color: blue;
-  }
+    /* font-weight: 0; */
+    background-color: rgb(255, 255, 255);
+}
+.readed{
+    /* font-weight: 0; */
+    background-color: rgb(240, 240, 240);
+}
