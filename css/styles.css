@@ -1,6 +1,10 @@
 /* parts */
 @import './parts/fonts.css';
 
+/* comps */
+@import './parts/comps/header.css';
+
+
 /* email app */
 @import './apps/email/main.css';
 

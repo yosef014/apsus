@@ -3,13 +3,24 @@
     margin: 0;
 }
 
- 
- .mail-container{
-     max-width: 60vw;
-     border: solid 1px;
+ .main-container{
+     display: flex;
+     justify-content: center;
+      }
+ .aside-container{
      display: flex;
      flex-direction: column;
-     margin-left: auto;
+     background-color: rgb(255, 255, 255);
+     width: 20vw;
+     padding: 5px;
+
+ }
+ .mail-container{
+     padding: 10px;
+     width: 90vw;
+     display: flex;
+     flex-direction: column;
+    
  }
  .mail-list{
      display: flex;
@@ -44,7 +55,84 @@
     font-weight: 0;
     background-color: rgb(240, 240, 240);
 }
-.aba{
-    font-size: 60px;
-    color: rgb(255, 255, 255);
+.to-back {
+    font-size: 40px;
+    text-decoration:  none;
+}
+.details-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.details-title{
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.details-from{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.aside-container .router-link-active{
+    background-color:#ffffff;
+	border-radius:0px 5px 5px 0px;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size:14px;
+	padding:6px 15px;
+	text-decoration:none;
+}
+.aside-container .router-link-active:hover{
+    background-color:#f1eeee;
+
+}
+.aside-container .router-link-exact-active {
+	background-color:#fce8e6;
+	border-radius:0px 5px 5px 0px;
+	display:inline-block;
+	cursor:pointer;
+	color:#d61200;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+}
+.book-filter{
+    margin-left: 20vw;
+    background-color: #F1F3F4;
+    border-radius: 15px;
+    max-width: 70vw;
+
+}
+.book-filter input{
+    padding: 8px;
+    width:30vw;
+    font-size: 16px;
+    background-color: #F1F3F4;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px 12px 12px 0px;
+    box-shadow: 0px 0px 3px #F1F3F4;
+    text-shadow: -50px 0px 0px #F1F3F4;
+    background-color: #F1F3F4;
+    border-color: #F1F3F4;
+    outline:none;
+
+}
+
+.book-filter button{
+    font-size: 16px;
+    border-width: 0px;
+    border-color: #CCCCCC;
+    background-color: #F1F3F4;
+    height: 38px;
+    border-radius: 12px 0px 0px 12px;  
+    padding-top: 10px;
+
+  
+}
+.book-filter button img{
+width: 25px;
+height: 25px;
+
 }

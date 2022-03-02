@@ -10,18 +10,26 @@ const MAILDB_KEY = 'MailDb'
 export default {
     template: `
            <mail-filter @filtered="setFilter"/>
-    <div class="mail-container">
-           <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>
-           <!-- <div class="box-veiw">
-            </div> -->
+           <br>
+           <div class="main-container">
+                <div class="aside-container">
+                   <router-link to="/appMail/">all</router-link> 
+                   <router-link to="/appMail/inbox">Inbox     2</router-link> 
+                   <router-link to="/appMail/">Sent</router-link> 
+                   <router-link to="/appMail/">Favorite</router-link> 
+                   <router-link to="/appMail/">Trash</router-link> 
+                   <router-link to="/appMail/">Drafts</router-link> 
+                 </div>
+                 <div class="mail-container">
+                   <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>
+
             <!-- <mail-list :mails="mailsForDisplay" @remove="removeMail"/> -->
+                </div>
+       
+          </div>
 
-          <router-link to="/appMail/details">Team</router-link> 
-          <router-link to="/appMail">mails</router-link> 
-          <router-link to="/appMail/inbox">inbox</router-link> 
-         
 
-    </div>
+
     `,
 
      components: {

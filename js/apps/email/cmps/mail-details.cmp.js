@@ -4,10 +4,14 @@ import { emailService } from '../services/email-service.js';
 export default {
     template: `
     <div class="details-container">
-    <router-link to="/appMail/inbox"><span>↩</span></router-link> 
-title:{{currEmail.subject}}
-from:{{currEmail.from}}
-to: {{currEmail.to}}
+    <router-link to="/appMail/inbox"><span class="to-back">↩</span></router-link> 
+    <span class="details-title">{{currEmail.subject}}</span>
+    <br>
+    <section class="details-from">from:{{currEmail.from}}</section>
+    <section class="details-from">to:{{currEmail.to}}</section>
+    <br>
+
+
 <p>{{currEmail.body}}</p>
 
     </div>
