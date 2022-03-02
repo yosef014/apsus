@@ -17,12 +17,12 @@ const routes = [
         component: mailApp,
         children: [
             {
-                path: 'details',
-                component: mailDetails
-            },
-            {
                 path: 'inbox',
                 component: inbox
+            },
+            {
+                path: 'inbox/:mailId',
+                component: mailDetails
             },
         ]
     },

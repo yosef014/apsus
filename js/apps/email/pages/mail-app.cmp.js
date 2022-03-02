@@ -9,12 +9,12 @@ const MAILDB_KEY = 'MailDb'
 
 export default {
     template: `
-    <div class="mail-container">
            <mail-filter @filtered="setFilter"/>
+    <div class="mail-container">
+           <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>
            <!-- <div class="box-veiw">
             </div> -->
             <!-- <mail-list :mails="mailsForDisplay" @remove="removeMail"/> -->
-            <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>
 
           <router-link to="/appMail/details">Team</router-link> 
           <router-link to="/appMail">mails</router-link> 

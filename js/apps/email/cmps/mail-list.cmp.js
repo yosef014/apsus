@@ -5,12 +5,13 @@ export default {
     template: `
     <div  v-for="mail in mails" :key="mail.id" @click="readStyle(mail.isRead)">
         
-        <div class="mail-list"  :class="readStyle(mail.isRead)">   
-              <div class="star">
+        <div class="mail-list"  :class="readStyle(mail.isRead)"  >   
+              <div class="star" >
               <img :src="markStarCalss(mail.isFavorite)" alt="favorite marker" srcset="" @click="mail.isFavorite=!mail.isFavorite">
+            </div>
+            <div class="subject" @click="redEmail(mail)">
               {{mail.subject}}
-             </div>
-  
+              </div>
               <div class="delet-btn">
               <img src="../../../../imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
               <img :src="readStatusCalss(mail.isRead)" alt="" srcset="" @click="mail.isRead=!mail.isRead">
@@ -34,6 +35,9 @@ export default {
     },
 
     methods: {
+        redEmail(mail){
+            this.$router.push(this.$route.path + '/' + mail.id)
+        },
         markStarCalss(isFavorite){
             if (isFavorite)   return '../../../../imgs/email/starOn.png'
             return '../../../../imgs/email/starOff.png'
