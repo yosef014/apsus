@@ -8,7 +8,8 @@ export const noteService = {
     query,
     getNote,
     removeNote,
-    saveNote
+    saveNote,
+    getInfoType
 }
 
 function query() {
@@ -27,6 +28,15 @@ function removeNote(noteId) {
     return storageService.remove(NOTES_KEY, noteId);
 }
 
+function getInfoType(noteType) {
+    switch (noteType) {
+        case 'note-txt':
+            return 'txt';
+        case 'note-img':
+        case 'note-video':
+            return 'url'
+    }
+}
 
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
@@ -40,17 +50,17 @@ function _createNotes() {
                     txt: "Note 1 txt"
                 }
             },
-            // {
-            //     id: "n102",
-            //     type: "note-img",
-            //     info: {
-            //         url: "http://some-img/me",
-            //         title: "Bobi and Me"
-            //     },
-            //     style: {
-            //         backgroundColor: "#00d"
-            //     }
-            // },
+            {
+                id: "n102",
+                type: "note-img",
+                info: {
+                    url: "https://static.scientificamerican.com/sciam/cache/file/ACF0A7DC-14E3-4263-93F438F6DA8CE98A_source.jpg?w=590&h=800&896FA922-DF63-4289-86E2E0A5A8D76BE1",
+                    // title: "Bobi and Me"
+                }
+                // style: {
+                //     backgroundColor: "#00d"
+                // }
+            },
             // {
             //     id: "n103",
             //     type: "note-todos",
@@ -63,19 +73,24 @@ function _createNotes() {
             //         }
             // }
             {
-                id: "n102",
+                id: "n103",
                 type: "note-txt",
-                isPinned: true,
                 info: {
                     txt: "Note 2 txt"
                 }
             },
             {
-                id: "n103",
+                id: "n104",
                 type: "note-txt",
-                isPinned: true,
                 info: {
                     txt: "Note 3 txt"
+                }
+            },
+            {
+                id: "n105",
+                type: "note-video",
+                info: {
+                    url: 'https://www.youtube.com/watch?v=Qi_ucKjCOvM&ab_channel=SekisukeChannel'
                 }
             }
         ];
