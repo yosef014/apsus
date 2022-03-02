@@ -19,3 +19,7 @@
 .note-list .note-preview {
     padding: 10px;
 }
+
+.note-list .note-todos .todo.completed {
+    text-decoration: line-through;
+}
