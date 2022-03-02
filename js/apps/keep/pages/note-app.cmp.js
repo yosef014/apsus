@@ -1,14 +1,14 @@
 import { noteService } from '../services/note-service.js';
-import notePreview from '../cmps/note-preview.cmp.js';
+import noteList from '../cmps/note-list.cmp.js';
 
 export default {
     template: `
         <section class="note-app">
-            <note-preview :notes="notes" />
+            <note-list :notes="notes" />
         </section>
     `,
     components: {
-        notePreview
+        noteList
     },
     data() {
         return {

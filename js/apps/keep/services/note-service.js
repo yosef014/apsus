@@ -22,30 +22,46 @@ function _createNotes() {
                 type: "note-txt",
                 isPinned: true,
                 info: {
-                    txt: "Fullstack Me Baby!"
+                    txt: "Note 1 txt"
                 }
             },
+            // {
+            //     id: "n102",
+            //     type: "note-img",
+            //     info: {
+            //         url: "http://some-img/me",
+            //         title: "Bobi and Me"
+            //     },
+            //     style: {
+            //         backgroundColor: "#00d"
+            //     }
+            // },
+            // {
+            //     id: "n103",
+            //     type: "note-todos",
+            //     info: {
+            //          label: "Get my stuff together",
+            //          todos: [
+            //             { txt: "Driving liscence", doneAt: null },
+            //             { txt: "Coding power", doneAt: 187111111 }
+            //             ]
+            //         }
+            // }
             {
                 id: "n102",
-                type: "note-img",
+                type: "note-txt",
+                isPinned: true,
                 info: {
-                    url: "http://some-img/me",
-                    title: "Bobi and Me"
-                },
-                style: {
-                    backgroundColor: "#00d"
+                    txt: "Note 2 txt"
                 }
             },
             {
                 id: "n103",
-                type: "note-todos",
+                type: "note-txt",
+                isPinned: true,
                 info: {
-                     label: "Get my stuff together",
-                     todos: [
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Coding power", doneAt: 187111111 }
-                        ]
-                    }
+                    txt: "Note 3 txt"
+                }
             }
         ];
         utilService.saveToStorage(NOTES_KEY, notes);
