@@ -40,3 +40,8 @@ table, th, td {
     font-weight: 0;
     background-color: rgb(240, 240, 240);
 }
+.box-veiw{
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+}

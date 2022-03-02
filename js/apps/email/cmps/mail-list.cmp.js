@@ -3,9 +3,7 @@
 export default {
     props: ['mails'],
     template: `
-    <div  v-for="mail in mails" :key="mail.id"
-              @click="readStyle(mail.isRead)"
-              @mouseover="sayHelow(mail.id)" >
+    <div  v-for="mail in mails" :key="mail.id" @click="readStyle(mail.isRead)">
         
         <div class="mail-list"  :class="readStyle(mail.isRead)">   
               <div class="star">
@@ -33,7 +31,6 @@ export default {
         }
     },
     created() {
-    console.log(this.mails);
     },
 
     methods: {
