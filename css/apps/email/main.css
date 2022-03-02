@@ -6,15 +6,37 @@ table, th, td {
     text-align: left;
     font-family: 'Robert'; 
  }
-th img{
+ .mail-container{
+     display: flex;
+     flex-direction: column;
+ }
+ .mail-list{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+     cursor: pointer;
+     max-width: 60vw;
+     margin: 0 auto;
+
+ }
+ .mail-list:hover{
+     background-color: rgb(215, 219, 219);
+ }
+.star img{
     height: 20px;
     width: 20px;
 }
+.delet-btn img{
+    height: 20px;
+    width: 20px;
+}
+
   .unread{
-    /* font-weight: 0; */
+    font-weight: bold;
     background-color: rgb(255, 255, 255);
 }
 .readed{
-    /* font-weight: 0; */
+    font-weight: 0;
     background-color: rgb(240, 240, 240);
 }

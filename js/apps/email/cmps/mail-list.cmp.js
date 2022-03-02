@@ -3,24 +3,29 @@
 export default {
     props: ['mails'],
     template: `
-        <!-- the tr line -->
-     <tr v-for="mail in mails" :key="mail.id" :class="readStyle(mail.isRead)"
+    <div  v-for="mail in mails" :key="mail.id"
               @click="readStyle(mail.isRead)"
               @mouseover="sayHelow(mail.id)" >
+        
+        <div class="mail-list"  :class="readStyle(mail.isRead)">   
+              <div class="star">
+              <img :src="markStarCalss(mail.isFavorite)" alt="favorite marker" srcset="" @click="mail.isFavorite=!mail.isFavorite">
+              {{mail.subject}}
+             </div>
+  
+              <div class="delet-btn">
+              <img src="../../../../imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
+              <img :src="readStatusCalss(mail.isRead)" alt="" srcset="" @click="mail.isRead=!mail.isRead">
+              <div>
+        </div> 
+    </div> 
 
-        <!-- star marker row -->
-        <th><img :src="markStarCalss(mail.isFavorite)" alt="favorite marker" srcset="" @click="mail.isFavorite=!mail.isFavorite"></th> 
+      
 
-        <!-- mail subject -->
-        <th>{{mail.subject}}</th>
-
-        <!-- delete and readed btns -->
-        <th>
-            <img src="../../../../imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
-            <img :src="readStatusCalss(mail.isRead)" alt="" srcset="" @click="mail.isRead=!mail.isRead">
+      
+         
             
-        </th>  
-    </tr>
+
     `,
     data() {
         return {

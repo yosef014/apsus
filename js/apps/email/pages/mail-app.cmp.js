@@ -7,11 +7,11 @@ const MAILDB_KEY = 'MailDb'
 
 export default {
     template: `
-      <div class="table-mail-container">
-        <table>    
+      <div class="mail-container">
+        <!-- <table>     -->
           <mail-list :mails="mailsDb" @remove="removeMail"/>
 
-</table>
+<!-- </table> -->
         
 </div>
     `,
