@@ -19,6 +19,7 @@ export default {
     created() {
         noteService.query()
                 .then(notes => this.notes = notes);
+                
         eventBus.on('save', this.saveNoteEdit);
         eventBus.on('toggleEdit', this.toggleEditMode)
     },
@@ -37,8 +38,8 @@ export default {
             if(note.isEditable === undefined) note.isEditable = true;
             else note.isEditable = !note.isEditable;
         },
-        saveNoteEdit({note, editedTxt}) {
-            note.info.txt = editedTxt;
+        saveNoteEdit({note, editedData}) {
+            note.info[noteService.getInfoType(note.type)] = editedData;
             noteService.saveNote(note);
         }
     }
