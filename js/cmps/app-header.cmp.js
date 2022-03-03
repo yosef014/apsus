@@ -8,8 +8,8 @@ export default {
                 
             </header>
             <div class="nav-bar-box" :class="menuClass()">
-            <img src="../../imgs/gmail.svg" @click="this.$router.push('/appMail/inbox')">
-            <img src="../../imgs/keep.svg" @click="this.$router.push('/appKeep')">
+            <img src="../../imgs/gmail.svg" @click="this.$router.push('/appMail/inbox')"@click="menuSwich()">
+            <img src="../../imgs/keep.svg" @click="this.$router.push('/appKeep')"@click="menuSwich()">
                 </div>
             `,
     data() {
@@ -25,7 +25,6 @@ export default {
         },
 
         menuClass() {
-
             if (!this.isMenuOpen) return ''
             else return 'nav-bar-box-open'
         }
