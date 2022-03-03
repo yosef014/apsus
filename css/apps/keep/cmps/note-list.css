@@ -1,7 +1,13 @@
-.note-list ul {
+.note-list {
+    
+}
+
+.note-list > ul {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 0;
+    column-count: 4;
+    /* display: flex;
+    flex-wrap: wrap; */
 }
 
 .note-list img {
@@ -9,16 +15,13 @@
 }
 
 .note-list ul li {
-    background-color: red;
-    width: fit-content;
-    height: fit-content;
-    margin: 10px;
-    padding: 10px;
+    /* width: fit-content;
+    height: fit-content; */
+    /* margin: 10px;
+    padding: 10px; */
 }
 
-.note-list .note-preview {
-    padding: 10px;
-}
+
 
 .note-list .note-todos .todo.completed {
     text-decoration: line-through;
