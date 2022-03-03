@@ -28,6 +28,31 @@ function getEmailsList(){
             isRead: false, sentAt: Date.now(),isFavorite: true,
             id: '15511339305941234174'
         },
+        {
+            folder: 'inbox', subject: 'LinkedIn Job Alerts',
+            from: 'David', to: 'me',
+            body: `I hope this mail finds you well.
+            After a speedy scan of your website, I am simply composing this email to let you know that your customers are facing problems finding your business website in Google's natural listings because your keywords are not in the Top-10. So, why are you not trying our low-cost marketing services to overcome this situation?
+
+                        Our Offerings are:           
+            
+            1. On-Page Optimization  
+            2. Video Creation & Marketing            
+            3. Press Release Marketing            
+            4. Blog Creation & Promotions            
+            5. Online Reputation Management            
+            6. Keyword Research, Analysis & Optimization            
+            7. Web Content Development            
+            8. Local Business Listings & Optimization            
+            9. Newsletter Marketing            
+            10. Content Marketing
+            11. Social Media Marketing
+            If you are really concerned about your business and want to produce fresh leads from the web by using our low cost marketing strategy then don't spare a moment to mail me back. In return I’ll be happy to offer you a no-cost Analysis Report of your website.
+            Eagerly waiting for your response.   
+            Thanks and regards,`,
+            isRead: false, sentAt: 1614362114000,isFavorite: true,
+            id: '15511339305941234dx74'
+        },
 
         {
             folder: 'inbox', subject: 'Discover next-generation slideshows‏', from: 'Canva', to: 'me',
