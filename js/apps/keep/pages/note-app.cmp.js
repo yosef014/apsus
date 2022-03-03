@@ -7,7 +7,7 @@ export default {
     template: `
         <section class="note-app">
             <note-add @addNote="addNote" />
-            <note-list :notes="notes" @delete="deleteNote"/>
+            <note-list v-if="notes" :notes="notesForDisplay" @delete="deleteNote"/>
         </section>
     `,
     components: {
@@ -50,6 +50,11 @@ export default {
                 .then(newNote => {
                     this.notes.push(newNote);
                 })
+        }
+    },
+    computed: {
+        notesForDisplay() {
+            return this.notes.slice().reverse();
         }
     }
 }

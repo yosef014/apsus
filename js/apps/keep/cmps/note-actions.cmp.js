@@ -3,10 +3,13 @@ export default {
     props: ['note'],
     template: `
        <section class="note-actions">
-            <button @click="deleteNote(note.id)">X</button>
-            <button @click="editNote(note)">Edit</button>
-            <label :for="inputId" class="fa-solid fa-palette"></label>
-            <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style.backgroundColor" @input="editColor(note)" />
+            <i :class="noteTypeIcon"></i>
+            <div class="actions">
+                <button @click="deleteNote(note.id)">X</button>
+                <button @click="editNote(note)">Edit</button>
+                <label :for="inputId" class="fa-solid fa-palette"></label>
+                <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style.backgroundColor" @input="editColor(note)" />
+            </div>
         </section>
     `,
     components: {
@@ -30,6 +33,18 @@ export default {
     computed: {
         inputId() {
             return 'input' + this.note.id;
+        },
+        noteTypeIcon() {
+            switch(this.note.type) {
+                case 'note-txt':
+                    return 'fa-solid fa-font';
+                case 'note-img':
+                    return 'fa-regular fa-image';
+                case 'note-video':
+                    return 'fa-brands fa-youtube';
+                case 'note-todos':
+                    return 'fa-solid fa-list-check';
+            }
         }
     }
 }

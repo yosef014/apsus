@@ -11,7 +11,8 @@ export default {
                 <li v-for="note in notes" 
                 @mouseover="note.isHover = true" @mouseleave="note.isHover = false"
                 class="note" :key="note.id"
-                :style="note.style">
+                :style="note.style"
+                >
                         <note-preview :note="note" />
                         <note-actions :note="note"
                             @delete="deleteNote"
