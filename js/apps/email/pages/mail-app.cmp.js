@@ -17,12 +17,12 @@ export default {
                 <button @click="senderSwich()">
                 <img src="../../../../imgs/email/plus.png"> Compose
                 </button>
-                   <router-link to="/appMail/all">all</router-link> 
-                   <router-link to="/appMail/inbox">Inbox     2</router-link> 
-                   <router-link to="/appMail/sent">Sent</router-link> 
-                   <router-link to="/appMail/favorite">Favorite</router-link> 
-                   <router-link to="/appMail/">Trash</router-link> 
-                   <router-link to="/appMail/">Drafts</router-link> 
+                   <router-link to="/appMail/all" class="btn">all</router-link> 
+                   <router-link to="/appMail/inbox" class="btn">Inbox     {{newMailsCount}}</router-link> 
+                   <router-link to="/appMail/sent" class="btn">Sent</router-link> 
+                   <router-link to="/appMail/favorite" class="btn">Favorite</router-link> 
+                   <!-- <router-link to="/appMail/">Trash</router-link> 
+                   <router-link to="/appMail/">Drafts</router-link>  -->
                  </div>
                  <div class="mail-container">
                    <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>
@@ -30,65 +30,74 @@ export default {
                 </div>
 
                 <mail-sender :isSenderOpen="isSenderOpen" @closeSender="senderSwich"/>
-             
    
 
 
     `,
 
-     components: {
-       mailList,
-       mailFilter,
-       mailSender,
-      
+    components: {
+        mailList,
+        mailFilter,
+        mailSender,
+
     },
 
     data() {
         return {
             mailsDb: emailService.getEmailsList(),
-            isTrShow : false,
+            isTrShow: false,
             filterBy: null,
-            isSenderOpen : false
+            isSenderOpen: false
 
         }
     },
     methods: {
-        senderSwich(){
-            this.isSenderOpen =!this.isSenderOpen
+        senderSwich() {
+            this.isSenderOpen = !this.isSenderOpen
         },
-    
-        openSender(){
+
+        openSender() {
             // this.isSenderOpen =!this.isSenderOpen
-           if (!this.isSenderOpen) return ''
-            else  return 'open'
+            if (!this.isSenderOpen) return ''
+            else return 'open'
         },
-        removeMail(id){
+        removeMail(id) {
             storageService.remove(MAILDB_KEY, id)
-            .then(() => {
-                const idx = this.mailsDb.findIndex((mail) => mail.id === id);
-                this.mailsDb.splice(idx, 1);
-            })
+                .then(() => {
+                    const idx = this.mailsDb.findIndex((mail) => mail.id === id);
+                    this.mailsDb.splice(idx, 1);
+                })
         },
-        readed(mail){
+        readed(mail) {
             mail.isRead = !mail.isRead
-            storageService.put(MAILDB_KEY,mail)
+            storageService.put(MAILDB_KEY, mail)
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
-       
-       
-       
-      
-        
 
     },
     computed: {
         mailsForDisplay() {
             if (!this.filterBy) return this.mailsDb
+            let filteredMails = this.mailsDb
+            if (this.filterBy.byRead == 'read') {
+                filteredMails = this.mailsDb.filter((mail) => mail.isRead)
+            } else if (this.filterBy.byRead == 'unread') {
+                filteredMails = this.mailsDb.filter((mail) => !mail.isRead)
+            }
             const regex = new RegExp(this.filterBy.subject, 'i');
-            return this.mailsDb.filter(mail => regex.test(mail.subject));
+            return filteredMails.filter(mail => regex.test(mail.subject));
+        },
+
+        newMailsCount(){
+            let counter =0
+            this.mailsDb.forEach(mail => {
+                if(!mail.isRead) counter++
+            });
+            return counter
+
         }
-        
+
     }
 }

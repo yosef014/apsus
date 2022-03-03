@@ -76,7 +76,7 @@ a{
 .details-from{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.aside-container .router-link-active{
+.aside-container .router-link-active ,.btn{
     background-color:#ffffff;
 	border-radius:0px 5px 5px 0px;
 	display:inline-block;
@@ -87,11 +87,11 @@ a{
 	padding:6px 15px;
 	text-decoration:none;
 }
-.aside-container .router-link-active:hover{
+.aside-container .router-link-active ,.btn:hover{
     background-color:#f1eeee;
 
 }
-.aside-container .router-link-exact-active {
+.aside-container .router-link-exact-active  {
 	background-color:#fce8e6;
 	border-radius:0px 5px 5px 0px;
 	display:inline-block;
