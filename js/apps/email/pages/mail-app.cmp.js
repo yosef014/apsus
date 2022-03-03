@@ -17,10 +17,10 @@ export default {
                 <button @click="senderSwich()">
                 <img src="../../../../imgs/email/plus.png"> Compose
                 </button>
-                   <router-link to="/appMail/">all</router-link> 
+                   <router-link to="/appMail/all">all</router-link> 
                    <router-link to="/appMail/inbox">Inbox     2</router-link> 
                    <router-link to="/appMail/sent">Sent</router-link> 
-                   <router-link to="/appMail/">Favorite</router-link> 
+                   <router-link to="/appMail/favorite">Favorite</router-link> 
                    <router-link to="/appMail/">Trash</router-link> 
                    <router-link to="/appMail/">Drafts</router-link> 
                  </div>
