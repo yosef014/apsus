@@ -1,4 +1,5 @@
 import { eventBus } from '../../../services/eventBus-service.js';
+import { noteService } from '../services/note-service.js';
 
 export default {
     props: ['note'],
@@ -17,24 +18,25 @@ export default {
         }
     },
     created() {
-        this.editedNoteData = this.whatToEdit(this.note.type);
+        this.editedNoteData = this.getCurrentData();
+        
     },
     methods: {
         saveEdit() {
             eventBus.emit('toggleEdit', this.note);
-            eventBus.emit('save', {note: this.note, editedData: this.editedNoteData})
+            let dataToSave = this.editedNoteData;
+            if(this.note.type === 'note-todos'){
+                dataToSave = noteService.getTodosFromStr(dataToSave);
+            }
+            eventBus.emit('saveNote', {note: this.note, editedData: dataToSave})
         },
         cancelEdit() {
             eventBus.emit('toggleEdit', this.note);
         },
-        whatToEdit(noteType) {
-            switch(noteType) {
-                case 'note-txt':
-                    return this.note.info.txt;
-                case 'note-img':
-                case 'note-video':
-                    return this.note.info.url;
-            }
+        getCurrentData() {
+            const paramName = noteService.getInfoType(this.note.type);
+            if(this.note.type === 'note-todos') return this.note.info[paramName].map(todo => todo.txt).join();
+            return this.note.info[paramName];
         }
     }
 }

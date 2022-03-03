@@ -9,7 +9,8 @@ export const noteService = {
     getNote,
     removeNote,
     saveNote,
-    getInfoType
+    getInfoType,
+    getTodosFromStr
 }
 
 function query() {
@@ -35,7 +36,13 @@ function getInfoType(noteType) {
         case 'note-img':
         case 'note-video':
             return 'url'
+        case 'note-todos':
+            return 'todos';
     }
+}
+
+function getTodosFromStr(todosStr) {
+    return todosStr.split(',').map(todo => ({txt: todo, doneAt: null}));
 }
 
 function _createNotes() {

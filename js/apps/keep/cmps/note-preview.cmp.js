@@ -7,7 +7,7 @@ export default {
     props: ['note'],
     template: `
         <section class="note-preview">
-            <component :is="note.type" :info="note.info"></component>
+            <component :is="note.type" :info="note.info" :note="note"></component>
         </section>
     `,
     components: {
