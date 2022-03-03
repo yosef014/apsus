@@ -1,14 +1,48 @@
 .note {
+    display: inline-flex;
+    flex-direction: column;
     border: 1px solid #e0e0e0;
     border-radius: 1rem;
-    width: 20vw;
     margin: 1rem;
-    padding: 2rem;
+    padding: 1rem;
+    width: 20vw;
     font-size: 1.2rem;
-    flex-direction: column;
-    display: inline-flex;
+    overflow-wrap: break-word;
 }
 
 .note:hover {
     box-shadow: 0px 10px 13px -7px #817f7f, 2px 3px 0px 0px #7e7c7c00;
 }
+
+/* TODO NOTE */
+.note .todo.completed {
+    text-decoration: line-through;
+}
+
+.note .todo:not(:last-of-type) {
+    border-bottom: 2px solid #817f7f;
+}
+
+/* .note .note-todos textarea {
+    display: flex;
+    flex-wrap: contain;
+    resize: none;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 1.5em;
+    padding: 0;
+}
+
+.note .note-todos textarea:hover,
+.note .note-todos textarea:focus
+ {
+    background-color: #c0c0c0;
+}
+
+.note .note-todos textarea::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+} */
