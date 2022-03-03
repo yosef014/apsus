@@ -36,6 +36,10 @@
     font-size: 1.3rem
 }
 
+.note-add .buttons-container i:last-of-type {
+    color: #2cac2c;
+}
+
 .note-add .buttons-container > *:hover,
 .note-add .buttons-container .selected {
     color: rgb(26, 26, 27);
