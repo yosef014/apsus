@@ -16,12 +16,12 @@ export default {
            <div class="main-container">
                 <div class="aside-container">
                 <button @click="senderSwich()">
-                <img src="../../../../imgs/email/plus.png"> <span>Compose</span>
+                <img src="imgs/email/plus.png"> <span>Compose</span>
                 </button>
-                   <router-link to="/appMail/all" class="btn">  <img src="../../../../imgs/email/all.png" >All</router-link> 
-                   <router-link to="/appMail/inbox" class="btn"><img src="../../../../imgs/email/inbox.png" >Inbox     {{newMailsCount}}</router-link> 
-                   <router-link to="/appMail/sent" class="btn"><img src="../../../../imgs/email/sent.png" >Sent</router-link> 
-                   <router-link to="/appMail/favorite" class="btn"><img src="../../../../imgs/email/blackSta.png" >Favorite</router-link> 
+                   <router-link to="/appMail/all" class="btn">  <img src="imgs/email/all.png" >All</router-link> 
+                   <router-link to="/appMail/inbox" class="btn"><img src="imgs/email/inbox.png" >Inbox     {{newMailsCount}}</router-link> 
+                   <router-link to="/appMail/sent" class="btn"><img src="imgs/email/sent.png" >Sent</router-link> 
+                   <router-link to="/appMail/favorite" class="btn"><img src="imgs/email/blackSta.png" >Favorite</router-link> 
                  </div>
                  <div class="mail-container">
                    <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>

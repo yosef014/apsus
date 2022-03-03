@@ -11,7 +11,7 @@ export default {
 
 <!-- delete and readed btns -->
 <th>
-    <img src="../../../../imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
+    <img src="imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
     <img :src="readStatusCalss(mail.isRead)" alt="" srcset="" @click="mail.isRead=!mail.isRead">
     `,
     data() {

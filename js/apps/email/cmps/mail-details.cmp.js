@@ -18,8 +18,8 @@ export default {
     <p>{{currEmail.body}}</p>
     <br>
     <div class="details-options">
-    <img src="../../../../imgs/email/keep.png">
-    <img src="../../../../imgs/email/del.png" @click="removeMail(currEmail.id)">
+    <img src="imgs/email/keep.png">
+    <img src="imgs/email/del.png" @click="removeMail(currEmail.id)">
     </div>
 
 </div>

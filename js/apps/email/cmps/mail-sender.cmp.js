@@ -25,7 +25,7 @@ export default {
           <div class="send-textarea"><textarea rows="14"> </textarea></div>
           <div class="send-footer"> 
           <button @click="closeSender()">send</button>
-          <img src="../../../../imgs/email/del.png" alt="delete" srcset=""  @click="closeSender()" >
+          <img src="imgs/email/del.png" alt="delete" srcset=""  @click="closeSender()" >
         </div>
         </div>
         
