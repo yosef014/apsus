@@ -9,8 +9,10 @@ export const noteService = {
     getNote,
     removeNote,
     saveNote,
+    addNote,
     getInfoType,
-    getTodosFromStr
+    getTodosFromStr,
+    getEmptyNote
 }
 
 function query() {
@@ -27,6 +29,23 @@ function saveNote(note) {
 
 function removeNote(noteId) {
     return storageService.remove(NOTES_KEY, noteId);
+}
+
+function addNote(noteType, noteData) {
+    const newNote = getEmptyNote();
+    newNote.type = noteType;
+    newNote.info[getInfoType(noteType)] = 
+        noteType === 'note-todos' ? getTodosFromStr(noteData) : noteData;
+
+    return storageService.post(NOTES_KEY, newNote);
+}   
+
+function getEmptyNote() {
+    return {
+        type: '',
+        isPinned: false,
+        info: {}
+    }
 }
 
 function getInfoType(noteType) {

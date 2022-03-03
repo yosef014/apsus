@@ -1,15 +1,18 @@
 import { noteService } from '../services/note-service.js';
 import { eventBus } from '../../../services/eventBus-service.js';
 import noteList from '../cmps/note-list.cmp.js';
+import noteAdd from '../cmps/note-add.cmp.js';
 
 export default {
     template: `
         <section class="note-app">
+            <note-add @addNote="addNote" />
             <note-list :notes="notes" @delete="deleteNote" @edit="toggleEditMode" />
         </section>
     `,
     components: {
-        noteList
+        noteList,
+        noteAdd
     },
     data() {
         return {
@@ -42,5 +45,11 @@ export default {
             if(editedData) note.info[noteService.getInfoType(note.type)] = editedData;
             noteService.saveNote(note);
         },
+        addNote({type, data}) {
+            noteService.addNote(type, data)
+                .then(newNote => {
+                    this.notes.push(newNote);
+                })
+        }
     }
 }
