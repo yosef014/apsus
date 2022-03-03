@@ -4,39 +4,38 @@ import mailList from '../cmps/mail-list.cmp.js'
 export default {
     props: ['mailsDb'],
     template: `
-     
-  <mail-list :mails="mailsDb" @remove="removeMail"/>    `,
+          <mail-list :mails="mailsDb" @remove="removeMail"/>    `,
     data() {
         return {
-            mailsDb :this.mailsDb
-        
+            mailsDb: this.mailsDb
+
         }
     },
     components: {
         mailList,
 
-       
-     },
+
+    },
     created() {
     },
 
     methods: {
-        redEmail(mail){
+        redEmail(mail) {
             this.$router.push(this.$route.path + '/' + mail.id)
         },
-        markStarCalss(isFavorite){
-            if (isFavorite)   return '../../../../imgs/email/starOn.png'
+        markStarCalss(isFavorite) {
+            if (isFavorite) return '../../../../imgs/email/starOn.png'
             return '../../../../imgs/email/starOff.png'
         },
-        readStatusCalss(isRead){
-            if (isRead)   return '../../../../imgs/email/open-mail.png'
+        readStatusCalss(isRead) {
+            if (isRead) return '../../../../imgs/email/open-mail.png'
             return '../../../../imgs/email/unread-mail.png'
         },
         readStyle(isRead) {
             if (isRead) return 'readed'
             return 'unread'
         },
-             
+
         remove(id) {
             this.$emit('remove', id);
         },
@@ -48,7 +47,7 @@ export default {
             // const regex = new RegExp(this.filterBy.subject, 'i');
             return this.mailsDb.filter(mail => mail.isFavorite);
         }
-       
-        
+
+
     }
 }
