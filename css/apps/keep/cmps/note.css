@@ -1,0 +1,14 @@
+.note {
+    border: 1px solid #e0e0e0;
+    border-radius: 1rem;
+    width: 20vw;
+    margin: 1rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    flex-direction: column;
+    display: inline-flex;
+}
+
+.note:hover {
+    box-shadow: 0px 10px 13px -7px #817f7f, 2px 3px 0px 0px #7e7c7c00;
+}
