@@ -3,6 +3,7 @@ import { emailService } from '../services/email-service.js';
 import { storageService } from '../../../services/async-storage-service.js';
 import mailList from '../cmps/mail-list.cmp.js'
 import mailFilter from '../cmps/mail-filter.cmp.js'
+import mailSender from '../cmps/mail-sender.cmp.js'
 
 
 const MAILDB_KEY = 'MailDb'
@@ -13,9 +14,12 @@ export default {
            <br>
            <div class="main-container">
                 <div class="aside-container">
+                <button @click="senderSwich()">
+                <img src="../../../../imgs/email/plus.png"> Compose
+                </button>
                    <router-link to="/appMail/">all</router-link> 
                    <router-link to="/appMail/inbox">Inbox     2</router-link> 
-                   <router-link to="/appMail/">Sent</router-link> 
+                   <router-link to="/appMail/sent">Sent</router-link> 
                    <router-link to="/appMail/">Favorite</router-link> 
                    <router-link to="/appMail/">Trash</router-link> 
                    <router-link to="/appMail/">Drafts</router-link> 
@@ -23,11 +27,11 @@ export default {
                  <div class="mail-container">
                    <router-view :mailsDb="mailsForDisplay" @remove="removeMail"/>
 
-            <!-- <mail-list :mails="mailsForDisplay" @remove="removeMail"/> -->
                 </div>
-       
-          </div>
 
+                <mail-sender :isSenderOpen="isSenderOpen" @closeSender="senderSwich"/>
+             
+   
 
 
     `,
@@ -35,6 +39,7 @@ export default {
      components: {
        mailList,
        mailFilter,
+       mailSender,
       
     },
 
@@ -42,11 +47,21 @@ export default {
         return {
             mailsDb: emailService.getEmailsList(),
             isTrShow : false,
-            filterBy: null
+            filterBy: null,
+            isSenderOpen : false
 
         }
     },
     methods: {
+        senderSwich(){
+            this.isSenderOpen =!this.isSenderOpen
+        },
+    
+        openSender(){
+            // this.isSenderOpen =!this.isSenderOpen
+           if (!this.isSenderOpen) return ''
+            else  return 'open'
+        },
         removeMail(id){
             storageService.remove(MAILDB_KEY, id)
             .then(() => {

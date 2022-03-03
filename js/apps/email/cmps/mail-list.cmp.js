@@ -9,7 +9,7 @@ export default {
               <div class="star" >
               <img :src="markStarCalss(mail.isFavorite)" alt="favorite marker" srcset="" @click="mail.isFavorite=!mail.isFavorite">
             </div>
-            <div class="subject" @click="redEmail(mail)">
+            <div class="subject" @click="mail.isRead=!mail.isRead" @click="redEmail(mail)">
               {{mail.subject}}
               </div>
               <div class="delet-btn">

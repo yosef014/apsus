@@ -1,5 +1,6 @@
 
 *{
+    box-sizing:border-box;
     margin: 0;
 }
 
@@ -97,6 +98,17 @@
 	padding:6px 15px;
 	text-decoration:none;
 }
+.aside-container button{
+    padding: 10px 24px 10px 15px;
+    border: solid 1px rgb(224, 224, 224);
+    border-radius:2em;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
 .book-filter{
     margin-left: 20vw;
     background-color: #F1F3F4;
@@ -134,5 +146,78 @@
 .book-filter button img{
 width: 25px;
 height: 25px;
+
+}
+.send-mail-container{
+    height: 350px;
+    width: 350px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 100vh;
+    border-radius: 12px 12px 0px 0px;  
+    border:  solid 1px #cecece;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: 1s
+
+}
+.open{
+    top: calc(100vh - 351px);
+    transition: 1s
+}
+.send-mail-header{
+    display: flex;
+    align-items: center;
+    background-color: #404040;
+    border-radius: 12px 12px 0px 0px;  
+    height: 30px;
+    padding: 10px;
+    color: #ffffff;
+    justify-content: space-between;
+}
+.send-mail-input2,.send-mail-input1{
+    border-bottom: solid #00000049 0.1px;
+}
+.send-mail-input2 span,.send-mail-input1 span{
+    color: #7a7a7a;
+    padding: 10px;
+}
+.send-mail-input2 input,.send-mail-input1 input{
+    outline:none;
+    border: none;
+}
+.send-textarea textarea{
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    max-height: 100vw;
+}
+.send-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.send-footer button{
+background-color: #297BE6;
+border-radius: 5px;
+border: #000000 1px;
+color: white;
+padding: 8px;
+width: 70px;
+cursor: pointer;
+
+
+}
+.send-footer img{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+
+}
+.send-footer img:hover{
+    transform: scale(1.1);
 
 }
