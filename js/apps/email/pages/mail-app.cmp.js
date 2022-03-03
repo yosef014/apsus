@@ -16,7 +16,7 @@ export default {
            <div class="main-container">
                 <div class="aside-container">
                 <button @click="senderSwich()">
-                <img src="../../../../imgs/email/plus.png"> Compose
+                <img src="../../../../imgs/email/plus.png"> <span>Compose</span>
                 </button>
                    <router-link to="/appMail/all" class="btn">  <img src="../../../../imgs/email/all.png" >All</router-link> 
                    <router-link to="/appMail/inbox" class="btn"><img src="../../../../imgs/email/inbox.png" >Inbox     {{newMailsCount}}</router-link> 

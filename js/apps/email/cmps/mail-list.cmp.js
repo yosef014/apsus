@@ -3,7 +3,7 @@
 export default {
     props: ['mails'],
     template: `
-    <div  v-for="mail in mails" :key="mail.id" @click="readStyle(mail.isRead)" @mouseover="editBar[mail.id]=true" @mouseleave="editBar[mail.id]=flase" >
+    <div  v-for="mail in mails" :key="mail.id" @click="readStyle(mail.isRead)" @mouseover="editBar[mail.id]=true" @mouseleave="editBar[mail.id]=false" >
         
         <div class="mail-list"  :class="readStyle(mail.isRead)"  >   
               <div class="star" >
@@ -16,7 +16,10 @@ export default {
               <img src="../../../../imgs/email/keep.png"  >
               <img src="../../../../imgs/email/full-screen.png" @click="mail.isRead=!mail.isRead" @click="redEmail(mail)" >
               <img src="../../../../imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
-              <img :src="readStatusCalss(mail.isRead)" alt="" srcset="" @click="mail.isRead=!mail.isRead">
+              <div class="action-icons">
+                <i class="fa-solid" :class="{'fa-envelope' : !mail.isRead, 'fa-envelope-open': mail.isRead }" @click="mail.isRead=!mail.isRead"></i>
+                </div>
+              <!-- <img :src="readStatusCalss(mail.isRead)" alt="" srcset="" @click="mail.isRead=!mail.isRead"> -->
             </div>
 
               <div class="date-show" v-if="!editBar[mail.id]">
