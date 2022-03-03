@@ -4,7 +4,6 @@ export default {
     props: ['info', 'note'],
     template: `
         <section class="note-todos">
-            <textarea  type="text" v-model="info.label" @change="saveTitle"> </textarea>
             <ul>
                 <li v-for="todo in info.todos" class="todo" :class="{completed: todo.doneAt}"  @click="toggleDoneToddo(todo)">
                     {{todo.txt}}

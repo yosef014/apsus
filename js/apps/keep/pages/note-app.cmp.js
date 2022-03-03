@@ -7,7 +7,7 @@ export default {
     template: `
         <section class="note-app">
             <note-add @addNote="addNote" />
-            <note-list :notes="notes" @delete="deleteNote" @edit="toggleEditMode" />
+            <note-list :notes="notes" @delete="deleteNote"/>
         </section>
     `,
     components: {
