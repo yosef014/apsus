@@ -1,8 +1,6 @@
 @media (min-width: 800px) {
   
-  body {
-    background-color: #d61200;
-  }
+  
    .main-container {
     /* display: flex; */
     flex-direction: row;
