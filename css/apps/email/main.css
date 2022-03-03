@@ -36,7 +36,7 @@ a{
      border-bottom: 1px solid rgba(0, 0, 0, 0.219);
      cursor: pointer;
      font-family: 'Roboto', sans-serif;
-     height: 50px;
+     height: 70px;
      gap: 10px;
      
 
@@ -79,6 +79,14 @@ a{
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+.details-container img{
+    width: 30px;
+    height: 30px;
+}
+.details-options{
+    display: flex;
+    justify-content: center;
 }
 .details-title{
     font-size: 1.3rem;
