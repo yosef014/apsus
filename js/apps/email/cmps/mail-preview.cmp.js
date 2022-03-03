@@ -24,12 +24,12 @@ export default {
 
     methods: {
         markStarCalss(isFavorite){
-            if (isFavorite)   return '../../../../imgs/email/starOn.png'
-            return '../../../../imgs/email/starOff.png'
+            if (isFavorite)   return 'imgs/email/starOn.png'
+            return 'imgs/email/starOff.png'
         },
         readStatusCalss(isRead){
-            if (isRead)   return '../../../../imgs/email/open-mail.png'
-            return '../../../../imgs/email/unread-mail.png'
+            if (isRead)   return 'imgs/email/open-mail.png'
+            return 'imgs/email/unread-mail.png'
         },
         readStyle(isRead) {
             if (isRead) return 'readed'

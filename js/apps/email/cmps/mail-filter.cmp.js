@@ -5,7 +5,7 @@ export default {
   <div class="filter-container">
   <div class="filter-input">       
 
-                <button>  <img src="../../../../imgs/email/search.png" ></button>
+                <button>  <img src="imgs/email/search.png" ></button>
             <input @input="setFilter" type="text" v-model="filterBy.subject" placeholder="Search..." >
             </label>
             </div>
