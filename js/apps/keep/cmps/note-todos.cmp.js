@@ -1,8 +1,10 @@
+import { eventBus } from '../../../services/eventBus-service.js';
+
 export default {
-    props: ['info'],
+    props: ['info', 'note'],
     template: `
         <section class="note-todos">
-            <h2>{{info.label}}</h2>
+            <textarea  type="text" v-model="info.label" @change="saveTitle"> </textarea>
             <ul>
                 <li v-for="todo in info.todos" class="todo" :class="{completed: todo.doneAt}"  @click="toggleDoneToddo(todo)">
                     {{todo.txt}}
@@ -17,7 +19,11 @@ export default {
     },
     methods: {
         toggleDoneToddo(todo) {
-            todo.doneAt = todo.doneAt ? null : Date.now()
+            todo.doneAt = todo.doneAt ? null : Date.now();
+            eventBus.emit('saveNote', {note: this.note});
+        },
+        saveTitle() {
+            eventBus.emit('saveNote', {note: this.note});
         }
     },
     computed: {
