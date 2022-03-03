@@ -9,7 +9,6 @@ export default {
     template: `
     
             <mail-list :mails="mailsForDisplay" @remove="remov"/>
-            <button @click="mailsForDisplay">fo</button>
     `,
 
      components: {
