@@ -1,53 +1,8 @@
-.note-list {
-    
+.note-list ul {
+    list-style: none;
+    padding: 0;
 }
 
 .note-list > ul {
-    list-style: none;
-    padding: 0;
     column-count: 4;
-    /* display: flex;
-    flex-wrap: wrap; */
-}
-
-.note-list img {
-    width: 100%;
-}
-
-.note-list ul li {
-    /* width: fit-content;
-    height: fit-content; */
-    /* margin: 10px;
-    padding: 10px; */
-}
-
-
-
-.note-list .note-todos .todo.completed {
-    text-decoration: line-through;
-}
-
-.note-list .note-todos textarea {
-    display: flex;
-    flex-wrap: contain;
-    resize: none;
-    overflow: scroll;
-    overflow-x: hidden;
-    border: none;
-    background: transparent;
-    color: #000;
-    font-size: 1.5em;
-    padding: 0;
-}
-
-.note-list .note-todos textarea:hover,
-.note-list .note-todos textarea:focus
- {
-    background-color: rgb(148, 72, 72);
-    border-radius: 1em;
-}
-
-.note-list .note-todos textarea::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
 }

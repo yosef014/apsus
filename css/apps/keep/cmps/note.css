@@ -1,14 +1,72 @@
 .note {
-    border: 1px solid #e0e0e0;
-    border-radius: 1rem;
-    width: 20vw;
-    margin: 1rem;
-    padding: 2rem;
-    font-size: 1.2rem;
-    flex-direction: column;
     display: inline-flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    margin: 1rem;
+    padding: 1rem 1rem 0;
+    width: 23vw;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+    position: relative;
 }
 
 .note:hover {
     box-shadow: 0px 10px 13px -7px #817f7f, 2px 3px 0px 0px #7e7c7c00;
+    transition: box-shadow 0.2s;
+}
+
+.note iframe,
+.note img {
+    width: 100%;
+}
+
+.note iframe {
+    height: 30vh;
+}
+
+.note .note-preview {
+    margin-bottom: 1rem;
+}
+
+.note .note-actions {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.note .note-actions i:first-of-type {
+    flex:1;
+}
+
+.note .note-actions .actions {
+    position: absolute;
+    opacity: 0;
+    bottom: 1rem;
+    right: -2rem;
+}
+
+.note:hover > .note-actions .actions{
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.note .note-actions .actions i {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.note .note-actions .actions label {
+    cursor: pointer;
+}
+
+.note .actions .btn-note-delete:hover {
+    color: red;
+}
+
+/* TODO NOTE */
+.note .todo.completed {
+    text-decoration: line-through;
+}
+
+.note .todo:not(:last-of-type) {
+    border-bottom: 2px solid #817f7f;
 }

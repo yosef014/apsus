@@ -1,0 +1,47 @@
+.note-add {
+    display: flex;
+    text-align: center;
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    border: solid 1px rgb(156, 151, 151);
+}
+
+.note-add .input-container {
+    flex: 1;
+}
+
+.note-add input {
+    box-sizing: border-box;
+    border: 0;
+    padding-left: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.note-add input:focus {
+    outline: none;
+}
+
+.note-add .buttons-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.note-add .buttons-container > * {
+    padding-right: 10px;
+    cursor: pointer; 
+    color: rgb(185, 180, 180);
+    font-size: 1.3rem
+}
+
+.note-add .buttons-container i:last-of-type {
+    color: #2cac2c;
+}
+
+.note-add .buttons-container > *:hover,
+.note-add .buttons-container .selected {
+    color: rgb(26, 26, 27);
+    font-weight: bold;
+}

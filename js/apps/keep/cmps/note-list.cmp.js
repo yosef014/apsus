@@ -1,17 +1,23 @@
+
 import notePreview from './note-preview.cmp.js';
 import noteEdit from './note-edit.cmp.js';
+import noteActions from './note-actions.cmp.js';
 
 export default {
     props: ['notes'],
     template: `
         <section class="note-list">
             <ul>
-                <li v-for="note in notes" @mouseover="note.isHover = true" @mouseleave="note.isHover = false" class="note" :key="note.id">
+                <li v-for="note in notes" 
+                @mouseover="note.isHover = true" @mouseleave="note.isHover = false"
+                class="note" :key="note.id"
+                :style="note.style"
+                >
                         <note-preview :note="note" />
-                        <section class="actions">
-                            <button @click="deleteNote(note.id)">X</button>
-                            <button @click="editNote(note)">Edit</button>
-                        </section>
+                        <note-actions :note="note"
+                            @delete="deleteNote"
+                            @edit="editNote"
+                        />
                         <note-edit v-if="note.isEditable" :note="note"/>
                 </li>
             </ul>
@@ -19,7 +25,8 @@ export default {
     `,
     components: {
         notePreview,
-        noteEdit
+        noteEdit,
+        noteActions
     },
     data() {
         return {
@@ -34,5 +41,6 @@ export default {
         }
     },
     computed: {
+        
     }
 }
