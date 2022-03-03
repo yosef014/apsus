@@ -21,7 +21,7 @@ export default {
 
     methods: {
         redEmail(mail) {
-            this.$router.push(this.$route.path + '/' + mail.id)
+            this.$router.push('/appMail' + '/' + mail.id)
         },
         markStarCalss(isFavorite) {
             if (isFavorite) return 'imgs/email/starOn.png'

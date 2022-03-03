@@ -39,6 +39,18 @@ const routes = [
                 path: 'inbox/:mailId',
                 component: mailDetails
             },
+            {
+                path: 'all/:mailId',
+                component: mailDetails
+            },
+            {
+                path: 'sent/:mailId',
+                component: mailDetails
+            },
+            {
+                path: 'favorite/:mailId',
+                component: mailDetails
+            },
         ]
     },
     {

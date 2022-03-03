@@ -6,6 +6,8 @@ const MAILDB_KEY = 'MailDb'
 
 export default {
     template: `
+
+
   <div class="details-container">
     <router-link to="/appMail/inbox"><span class="to-back">↩</span></router-link>
     <span class="details-title">{{currEmail.subject}}</span>
@@ -13,7 +15,7 @@ export default {
     <section class="details-from">from:{{currEmail.from}}</section>
     <section class="details-from">to:{{currEmail.to}}</section>
     <br>
-
+move
 
     <p>{{currEmail.body}}</p>
     <br>
