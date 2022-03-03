@@ -45,7 +45,7 @@ function getEmptyNote() {
         type: '',
         isPinned: false,
         info: {},
-        style: {backgroundColor: "#fafafa"}
+        style: {'background-color': "#fafafa"}
     }
 }
 
@@ -77,7 +77,7 @@ function _createNotes() {
                     txt: "Note 1 txt"
                 },
                 style: {
-                    backgroundColor: "#fafafa"
+                    'background-color': "#fafafa"
                 }
             },
             {
@@ -88,7 +88,7 @@ function _createNotes() {
                     // title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#fafafa"
+                    'background-color': "#fafafa"
                 }
             },
             {
@@ -102,7 +102,7 @@ function _createNotes() {
                         ]
                     },
                 style: {
-                    backgroundColor: "#fafafa"
+                    'background-color': "#fafafa"
                 }
             },
             {
@@ -112,7 +112,7 @@ function _createNotes() {
                     txt: "Note 2 txt"
                 },
                 style: {
-                    backgroundColor: "#fafafa"
+                    'background-color': "#fafafa"
                 }
             },
             {
@@ -122,7 +122,7 @@ function _createNotes() {
                     txt: "Note 3 txt"
                 },
                 style: {
-                    backgroundColor: "#fafafa"
+                    'background-color': "#fafafa"
                 }
             },
             {
@@ -132,7 +132,7 @@ function _createNotes() {
                     url: 'https://www.youtube.com/watch?v=Qi_ucKjCOvM&ab_channel=SekisukeChannel'
                 },
                 style: {
-                    backgroundColor: "#fafafa"
+                    'background-color': "#fafafa"
                 }
             }
         ];

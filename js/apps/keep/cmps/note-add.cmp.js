@@ -9,7 +9,7 @@ export default {
                 <i class="fa-regular fa-image" @click="changeType('img')" :class="isActive('img')" title="Picture Note"></i>
                 <i class="fa-brands fa-youtube" @click="changeType('video')" :class="isActive('video')" title="Youtube Video Note"></i>
                 <i class="fa-solid fa-list-check" @click="changeType('todos')" :class="isActive('todos')" title="To-Do List Note"></i>
-                <i class="fa-regular fa-circle-check" class="add-note-btn" @click="addNote" title="Add Note"></i>
+                <i class="fa-regular fa-circle-check add-note-btn" @click="addNote" title="Add Note"></i>
             </div>
         </section>
     `,
