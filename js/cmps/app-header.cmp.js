@@ -3,9 +3,32 @@ export default {
         <header>
              <div class="logo"> Appsus</div>
              <div class="nav-bar">
-                    <router-link to="/appMail">Emails</router-link>
-                    <router-link to="/appKeep">Notes</router-link>    
-              </div>
-        </header>
-    `
+                 <img src="../../imgs/apps.svg" @click="menuSwich()">
+                </div>
+                
+            </header>
+            <div class="nav-bar-box" :class="menuClass()">
+            <img src="../../imgs/gmail.svg" @click="this.$router.push('/appMail/inbox')">
+            <img src="../../imgs/keep.svg" @click="this.$router.push('/appKeep')">
+                </div>
+            `,
+    data() {
+        return {
+            isMenuOpen: false,
+
+        }
+    },
+
+    methods: {
+        menuSwich() {
+            this.isMenuOpen = !this.isMenuOpen
+        },
+
+        menuClass() {
+
+            if (!this.isMenuOpen) return ''
+            else return 'nav-bar-box-open'
+        }
+    },
+
 }

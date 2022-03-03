@@ -2,17 +2,22 @@
 
 export default {
     template: `
-  <section class="book-filter">
+  <div class="filter-container">
+  <div class="filter-input">       
+
                 <button>  <img src="../../../../imgs/email/search.png" ></button>
             <input @input="setFilter" type="text" v-model="filterBy.subject" placeholder="Search..." >
             </label>
-            
-        </section>         
-        <select id="all" @change="setFilter()" v-model="filterBy.byRead">
-            <option value="" >Read/Unread</option>
-            <option value="read">Read</option>
-            <option value="unread">Unread</option>
-</select>
+            </div>
+
+            <div class="filter-selcet">       
+                <select id="all" @change="setFilter()" v-model="filterBy.byRead">
+                    <option value="" >Read/Unread</option>
+                    <option value="read">Read</option>
+                    <option value="unread">Unread</option>
+                </select>
+            </div>
+</div>  
 
     `,
     data() {

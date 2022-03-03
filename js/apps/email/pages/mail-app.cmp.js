@@ -77,6 +77,10 @@ export default {
         },
 
     },
+    created() {
+        this.$router.push('/appMail/inbox')
+        
+    },
     computed: {
         mailsForDisplay() {
             if (!this.filterBy) return this.mailsDb
