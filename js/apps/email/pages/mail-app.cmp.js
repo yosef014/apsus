@@ -6,6 +6,7 @@ import mailFilter from '../cmps/mail-filter.cmp.js'
 import mailSender from '../cmps/mail-sender.cmp.js'
 
 
+
 const MAILDB_KEY = 'MailDb'
 
 export default {
@@ -17,10 +18,10 @@ export default {
                 <button @click="senderSwich()">
                 <img src="../../../../imgs/email/plus.png"> Compose
                 </button>
-                   <router-link to="/appMail/all" class="btn">all</router-link> 
-                   <router-link to="/appMail/inbox" class="btn">Inbox     {{newMailsCount}}</router-link> 
-                   <router-link to="/appMail/sent" class="btn">Sent</router-link> 
-                   <router-link to="/appMail/favorite" class="btn">Favorite</router-link> 
+                   <router-link to="/appMail/all" class="btn">  <img src="../../../../imgs/email/all.png" >All</router-link> 
+                   <router-link to="/appMail/inbox" class="btn"><img src="../../../../imgs/email/inbox.png" >Inbox     {{newMailsCount}}</router-link> 
+                   <router-link to="/appMail/sent" class="btn"><img src="../../../../imgs/email/sent.png" >Sent</router-link> 
+                   <router-link to="/appMail/favorite" class="btn"><img src="../../../../imgs/email/blackSta.png" >Favorite</router-link> 
                    <!-- <router-link to="/appMail/">Trash</router-link> 
                    <router-link to="/appMail/">Drafts</router-link>  -->
                  </div>

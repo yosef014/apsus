@@ -50,6 +50,12 @@ a{
     margin-right: auto;
     width: 50vw;
 }
+.delet-btn{
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+
+}
 .delet-btn img{
     height: 20px;
     width: 20px;
@@ -91,6 +97,11 @@ a{
 	padding:6px 15px;
 	text-decoration:none;
     height: 40px;
+}
+.aside-container img{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
 }
 .aside-container .router-link-active ,.btn:hover{
     background-color:#f1eeee;
@@ -248,4 +259,7 @@ cursor: pointer;
 .filter-selcet{
     text-align: center;
     background-color: #000000;
+}
+.close-mail{
+    cursor: pointer;
 }
