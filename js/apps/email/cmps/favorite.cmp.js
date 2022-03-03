@@ -4,8 +4,7 @@ import mailList from '../cmps/mail-list.cmp.js'
 export default {
     props: ['mailsDb'],
     template: `
-     
-  <mail-list :mails="mailsForDisplay" @remove="removeMail"/>    `,
+      <mail-list :mails="mailsForDisplay" @remove="removeMail"/>    `,
     data() {
         return {
             mailsDb :this.mailsDb

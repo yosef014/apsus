@@ -1,7 +1,7 @@
 
 
 export default {
-    props:['isSenderOpen'],
+    props: ['isSenderOpen'],
     template: `
    <div class="send-mail-container" :class="openSender()">
                 <div class="send-mail-header">         
@@ -36,28 +36,28 @@ export default {
     `,
     data() {
         return {
-        
+
         }
     },
     created() {
     },
 
     methods: {
-        openSender(){
+        openSender() {
             // this.isSenderOpen =!this.isSenderOpen
-           if (!this.isSenderOpen) return ''
-            else  return 'open'
+            if (!this.isSenderOpen) return ''
+            else return 'open'
         },
-        closeSender(){
+        closeSender() {
             this.$emit('closeSender');
 
         }
-       
+
 
     },
     computed: {
-     
-       
-        
+
+
+
     }
 }
