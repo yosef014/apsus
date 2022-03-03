@@ -5,8 +5,8 @@ export default {
        <section class="note-actions">
             <i :class="noteTypeIcon"></i>
             <div class="actions">
-                <button @click="deleteNote(note.id)">X</button>
-                <button @click="editNote(note)">Edit</button>
+                <i class="fa-solid fa-trash-can btn-note-delete" @click="deleteNote(note.id)"></i>
+                <i class="fa-solid fa-pen-to-square" @click="editNote(note)"></i>
                 <label :for="inputId" class="fa-solid fa-palette"></label>
                 <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style.backgroundColor" @input="editColor(note)" />
             </div>

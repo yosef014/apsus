@@ -44,9 +44,22 @@
     right: -2rem;
 }
 
-.note:hover > .note-actions .actions {
+.note:hover > .note-actions .actions{
     opacity: 1;
     transition: opacity 0.2s;
+}
+
+.note .note-actions .actions i {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.note .note-actions .actions label {
+    cursor: pointer;
+}
+
+.note .actions .btn-note-delete:hover {
+    color: red;
 }
 
 /* TODO NOTE */
