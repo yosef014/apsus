@@ -10,7 +10,8 @@ export default {
             <ul>
                 <li v-for="note in notes" 
                 class="note" :class="addEditableClass(note)"
-                :style="note.style" :key="note.id">   
+                :style="note.style" :key="note.id">
+                
                     <div class="note-container">
                         <note-preview :note="note" />
                         <note-actions :note="note"
