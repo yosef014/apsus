@@ -1,4 +1,3 @@
-
 import notePreview from './note-preview.cmp.js';
 import noteEdit from './note-edit.cmp.js';
 import noteActions from './note-actions.cmp.js';

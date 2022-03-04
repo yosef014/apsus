@@ -2,21 +2,25 @@ import { noteService } from '../services/note-service.js';
 import { eventBus } from '../../../services/eventBus-service.js';
 import noteList from '../cmps/note-list.cmp.js';
 import noteAdd from '../cmps/note-add.cmp.js';
+import noteFilter from '../cmps/note-filter.cmp.js';
 
 export default {
     template: `
         <section class="note-app">
+            <note-filter @filtered="setFilter" />
             <note-add @addNote="addNote" />
             <note-list v-if="notes" :notes="notesForDisplay" @delete="deleteNote"/>
         </section>
     `,
     components: {
         noteList,
-        noteAdd
+        noteAdd,
+        noteFilter
     },
     data() {
         return {
             notes: null,
+            filterBy: null
         }
     },
     created() {
@@ -50,11 +54,28 @@ export default {
                 .then(newNote => {
                     this.notes.push(newNote);
                 })
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
         }
     },
     computed: {
         notesForDisplay() {
-            return this.notes.slice().reverse();
+            let displayedNotes = this.notes.slice().reverse();
+            if(!this.filterBy) return displayedNotes;
+
+            const txtReg = new RegExp(this.filterBy.txt, 'i');
+            return displayedNotes.filter(note => {
+
+                if(this.filterBy.type && this.filterBy.type !== note.type) return false;
+
+                if(note.type === 'note-txt') return txtReg.test(note.info.txt);
+                else if(note.type === 'note-todos') {
+                    return note.info.todos.some(todo => txtReg.test(todo.txt))
+                }
+                
+                return !this.filterBy.txt;
+            })
         }
     }
 }
