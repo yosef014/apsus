@@ -8,7 +8,7 @@ export default {
                 <i class="fa-solid fa-trash-can btn-note-delete" @click="deleteNote(note.id)"></i>
                 <i class="fa-solid fa-pen-to-square" @click="editNote(note)"></i>
                 <label :for="inputId" class="fa-solid fa-palette"></label>
-                <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style.backgroundColor" @input="editColor(note)" />
+                <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style['background-color']" @input="editColor(note)" />
             </div>
         </section>
     `,

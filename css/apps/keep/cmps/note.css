@@ -39,7 +39,7 @@
 .note .note-actions .actions {
     position: absolute;
     opacity: 0;
-    bottom: 1rem;
+    bottom: 0;
     right: -2rem;
 }
 
