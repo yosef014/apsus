@@ -9,6 +9,7 @@ export default {
         <section class="note-app">
             <note-filter @filtered="setFilter" />
             <note-add @addNote="addNote" />
+            <note-list v-if="notes" :notes="pinnedNotesForDisplay" @delete="deleteNote" />
             <note-list v-if="notes" :notes="notesForDisplay" @delete="deleteNote"/>
         </section>
     `,
@@ -57,11 +58,9 @@ export default {
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
-        }
-    },
-    computed: {
-        notesForDisplay() {
-            let displayedNotes = this.notes.slice().reverse();
+        },
+        filterNotes(notes = this.notes) {
+            let displayedNotes = notes.slice().reverse();
             if(!this.filterBy) return displayedNotes;
 
             const txtReg = new RegExp(this.filterBy.txt, 'i');
@@ -76,6 +75,14 @@ export default {
                 
                 return !this.filterBy.txt;
             })
+        }
+    },
+    computed: {
+        notesForDisplay() {
+            return this.filterNotes(this.notes.filter(note => !note.isPinned));
+        },
+        pinnedNotesForDisplay() {
+            return this.filterNotes(this.notes.filter(note => note.isPinned))
         }
     }
 }

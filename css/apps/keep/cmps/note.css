@@ -23,6 +23,29 @@
     height: 30vh;
 }
 
+.note .note-container {
+    position: relative;
+}
+
+.note .note-pin {
+    position: absolute;
+    top: -.9rem;
+    right: -.9rem;
+    color:#c71b1b;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.note .note-pin:hover,
+.note .note-pin .pinned {
+    color: #2424a0;
+    
+}
+
+.note .note-pin .pinned:hover {
+    color:#c71b1b;
+}
+
 .note .note-preview {
     margin-bottom: 1rem;
 }
@@ -43,12 +66,10 @@
     right: -2rem;
 }
 
-.note .note-container {
-    position: relative;
-}
-
-.note:hover > .note-container .note-actions .actions,
-.note.editable > .note-container .note-actions .actions {
+.note:hover .note-actions .actions,
+.note.editable .note-actions .actions,
+.note:hover .note-pin,
+.note.pinned .note-pin {
     opacity: 1;
     transition: opacity 0.2s;
 }
