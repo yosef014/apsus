@@ -1,0 +1,32 @@
+.note-filter {
+    display: flex;
+    position: absolute;
+    height: 40px;
+    top: 5px;
+    left: 150px;
+    width: 700px;
+    box-shadow: 1px 1px 0px 2px #d8dadb50;
+    border-radius: 10px;
+}
+
+.note-filter input,
+.note-filter select {
+    border: 0;
+    border-radius: inherit;
+    outline: none;
+}
+
+.note-filter input {
+    flex: 85%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 10px
+}
+
+.note-filter select {
+    flex: 15%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 5px;
+    border-left: 1px solid #363434;
+}
