@@ -7,7 +7,7 @@ export default {
             <ul>
                 <li v-for="todo in info.todos" class="todo" :class="{completed: todo.doneAt}"  @click="toggleDoneToddo(todo)">
                     <i class="fa-regular" :class="getTodoIcon(todo)"></i>
-                    <span class="todo-txt">{{todo.txt}}<span>
+                    <span class="todo-txt">{{todo.txt}}</span>
                 </li>
             </ul>
         </section>

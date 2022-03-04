@@ -29,8 +29,8 @@
 
 .note .note-pin {
     position: absolute;
-    top: -.9rem;
-    right: -.9rem;
+    top: -.8rem;
+    right: -.8rem;
     color:#c71b1b;
     opacity: 0;
     cursor: pointer;

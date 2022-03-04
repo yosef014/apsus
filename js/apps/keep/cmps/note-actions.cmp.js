@@ -12,16 +12,6 @@ export default {
             </div>
         </section>
     `,
-    components: {
-
-    },
-    data() {
-        return {
-        }
-    },
-    created() {
-        console.log(this.note)
-    },
     methods: {
         deleteNote(noteId) {
             this.$emit('delete', noteId);

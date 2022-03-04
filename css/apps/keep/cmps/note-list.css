@@ -6,3 +6,9 @@
 .note-list > ul {
     column-count: 4;
 }
+
+.pinned-note-list > p{
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    color: #757575;
+}

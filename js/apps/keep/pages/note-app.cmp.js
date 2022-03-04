@@ -9,7 +9,11 @@ export default {
         <section class="note-app">
             <note-filter @filtered="setFilter" />
             <note-add @addNote="addNote" />
-            <note-list v-if="notes" :notes="pinnedNotesForDisplay" @delete="deleteNote" />
+            <section v-if="notes && isNotePinned()" class="pinned-note-list">
+                <p>Pinned:</p>
+                <note-list v-if="notes" :notes="pinnedNotesForDisplay" @delete="deleteNote" />
+                <p>Others:</p>
+            </section>
             <note-list v-if="notes" :notes="notesForDisplay" @delete="deleteNote"/>
         </section>
     `,
@@ -75,6 +79,9 @@ export default {
                 
                 return !this.filterBy.txt;
             })
+        },
+        isNotePinned() {
+            return this.notes.some(note => note.isPinned);
         }
     },
     computed: {
