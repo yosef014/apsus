@@ -3,8 +3,9 @@
     text-align: center;
     width: 50%;
     height: 50px;
-    margin: 10px auto;
-    border: solid 1px rgb(156, 151, 151);
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: -1px 2px 10px 0px #2f2f3333;
 }
 
 .note-add .input-container {
@@ -12,8 +13,8 @@
 }
 
 .note-add input {
-    box-sizing: border-box;
     border: 0;
+    border-radius: 10px;
     padding-left: 10px;
     height: 100%;
     width: 100%;
@@ -32,7 +33,7 @@
 .note-add .buttons-container > * {
     padding-right: 10px;
     cursor: pointer; 
-    color: rgb(185, 180, 180);
+    color: #b9b4b4;
     font-size: 1.3rem
 }
 
@@ -42,6 +43,6 @@
 
 .note-add .buttons-container > *:hover,
 .note-add .buttons-container .selected {
-    color: rgb(26, 26, 27);
+    color: #111113;
     font-weight: bold;
 }

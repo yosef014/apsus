@@ -6,7 +6,8 @@ export default {
         <section class="note-todos">
             <ul>
                 <li v-for="todo in info.todos" class="todo" :class="{completed: todo.doneAt}"  @click="toggleDoneToddo(todo)">
-                    {{todo.txt}}
+                    <i class="fa-regular" :class="getTodoIcon(todo)"></i>
+                    <span class="todo-txt">{{todo.txt}}<span>
                 </li>
             </ul>
         </section>
@@ -23,6 +24,9 @@ export default {
         },
         saveTitle() {
             eventBus.emit('saveNote', {note: this.note});
+        },
+        getTodoIcon({doneAt}) {
+            return doneAt ? 'fa-square-check' : 'fa-square';
         }
     },
     computed: {

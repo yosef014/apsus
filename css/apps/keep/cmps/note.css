@@ -77,5 +77,10 @@
 }
 
 .note .todo:not(:last-of-type) {
-    border-bottom: 2px solid #817f7f;
+    margin-bottom: 10px;
+
+}
+
+.note .todo-txt {
+    margin-left: 10px;
 }

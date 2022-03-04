@@ -39,7 +39,7 @@ export default {
         inputPlaceholder() {
             switch (this.noteType) {
                 case 'txt':
-                    return 'What\'s on your mind...';
+                    return 'Take a note...';
                 case 'img':
                     return 'Enter img URL...';
                 case 'video':
