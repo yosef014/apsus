@@ -1,8 +1,8 @@
 export default {
     template: `
         <header>
-             <div class="logo"> 
-             <div> <img src="imgs/logo.png"  @click="this.$router.push('/')"></div><div><span> A</span>psus</div>
+             <div class="logo" @click="this.$router.push('/')"> 
+             <div> <img src="imgs/logo.png"  ></div><div><span> A</span>ppsus</div>
              </div>
              <div class="nav-bar">
                  <img src="imgs/apps.svg" @click="menuSwich()">
