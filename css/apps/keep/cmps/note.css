@@ -1,5 +1,5 @@
 .note {
-    display: inline-flex;
+    display: inline-block;
     flex-direction: column;
     border: 1px solid #e0e0e0;
     margin: 1rem;
@@ -7,7 +7,6 @@
     width: 23vw;
     font-size: 1.2rem;
     overflow-wrap: break-word;
-    position: relative;
 }
 
 .note:hover {
@@ -44,7 +43,12 @@
     right: -2rem;
 }
 
-.note:hover > .note-actions .actions{
+.note .note-container {
+    position: relative;
+}
+
+.note:hover > .note-container .note-actions .actions,
+.note.editable > .note-container .note-actions .actions {
     opacity: 1;
     transition: opacity 0.2s;
 }
@@ -60,6 +64,11 @@
 
 .note .actions .btn-note-delete:hover {
     color: red;
+}
+
+.note .note-edit {
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 /* TODO NOTE */

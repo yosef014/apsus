@@ -9,16 +9,15 @@ export default {
         <section class="note-list">
             <ul>
                 <li v-for="note in notes" 
-                @mouseover="note.isHover = true" @mouseleave="note.isHover = false"
-                class="note" :key="note.id"
-                :style="note.style"
-                >
+                class="note" :class="addEditableClass(note)"
+                :style="note.style" :key="note.id">   
+                    <div class="note-container">
                         <note-preview :note="note" />
                         <note-actions :note="note"
                             @delete="deleteNote"
-                            @edit="editNote"
-                        />
-                        <note-edit v-if="note.isEditable" :note="note"/>
+                            @edit="editNote" />
+                    </div>
+                    <note-edit v-if="note.isEditable" :note="note" />
                 </li>
             </ul>
         </section>
@@ -38,6 +37,9 @@ export default {
         },
         editNote(note) {
             this.$emit('edit', note);
+        },
+        addEditableClass(note) {
+            return {editable: note.isEditable};
         }
     },
     computed: {
