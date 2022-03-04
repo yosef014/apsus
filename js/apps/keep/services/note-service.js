@@ -136,6 +136,7 @@ function _createNotes() {
                 }
             }
         ];
+        console.log('service is not the problem')
         utilService.saveToStorage(NOTES_KEY, notes);
     }
     return notes;

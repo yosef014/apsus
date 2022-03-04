@@ -19,6 +19,9 @@ export default {
         return {
         }
     },
+    created() {
+        console.log(this.note)
+    },
     methods: {
         deleteNote(noteId) {
             this.$emit('delete', noteId);
