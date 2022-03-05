@@ -1,3 +1,4 @@
+import { eventBus } from '../../../services/eventBus-service.js';
 
 
 export default {
@@ -13,7 +14,7 @@ export default {
               {{mail.subject}}
               </div>
               <div class="delet-btn" v-if="editBar[mail.id]" >
-              <img src="imgs/email/keep.png"  >
+              <img src="imgs/email/keep.png"  @click="sendMailToKeep(mail)">
               <img src="imgs/email/full-screen.png" @click="mail.isRead=!mail.isRead" @click="redEmail(mail)" >
               <img src="imgs/email/del.png" alt="delete" srcset="" @click="remove(mail.id)" >
               <!-- <div class="action-icons">
@@ -43,6 +44,9 @@ export default {
     },
 
     methods: {
+        sendMailToKeep(mail){
+            eventBus.emit('makeNoteFromMail', mail.body)
+        },
         museOn(id) {
             this.editBar[id] = id
         },
