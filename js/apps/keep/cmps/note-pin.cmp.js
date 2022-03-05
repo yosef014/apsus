@@ -4,7 +4,7 @@ export default {
     props: ['note'],
     template: `
         <section class="note-pin">
-            <i class="fa-solid fa-thumbtack" :class="isPinned" @click="changePinned"></i>
+            <i class="fa-solid fa-thumbtack" :class="isPinned" @click="changePinned" :title="pinTitle"></i>
         </section>
     `,
     methods: {
@@ -16,6 +16,9 @@ export default {
     computed: {
         isPinned() {
             return {pinned: this.note.isPinned};
+        },
+        pinTitle() {
+            return this.note.isPinned ? 'Unpin' : 'Pin';
         }
     }
 }

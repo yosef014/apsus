@@ -1,8 +1,9 @@
 export default {
     template: `
         <section class="note-filter">
-                <input type="text" v-model="filterBy.txt" @input="filter" :disabled="enableSearch" placeholder="Search" />
-                <select v-model="filterBy.type" @change="filter()">
+                <input type="text" v-model="filterBy.txt" @input="filter" 
+                :disabled="enableSearch" placeholder="Search" title="Search in notes" />
+                <select v-model="filterBy.type" @change="filter" title="Search by note type">
                     <option value="">All</option>
                     <option value="note-txt">Text</option>
                     <option value="note-img">Image</option>
