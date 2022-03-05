@@ -15,12 +15,5 @@ export default {
         noteImg,
         noteVideo,
         noteTodos
-    },
-    data() {
-        return {
-            
-        }
-    },
-    methods: {
     }
 }

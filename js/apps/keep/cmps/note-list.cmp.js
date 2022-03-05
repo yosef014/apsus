@@ -28,10 +28,6 @@ export default {
         noteActions,
         notePin
     },
-    data() {
-        return {
-        }
-    },
     methods: {
         deleteNote(noteId) {
             this.$emit('delete', noteId);
@@ -39,8 +35,5 @@ export default {
         addEditableClass(note) {
             return {editable: note.isEditable};
         }
-    },
-    computed: {
-        
     }
 }

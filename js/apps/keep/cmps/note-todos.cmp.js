@@ -12,11 +12,6 @@ export default {
             </ul>
         </section>
     `,
-    data() {
-        return {
-
-        }
-    },
     methods: {
         toggleDoneToddo(todo) {
             todo.doneAt = todo.doneAt ? null : Date.now();
@@ -28,7 +23,5 @@ export default {
         getTodoIcon({doneAt}) {
             return doneAt ? 'fa-square-check' : 'fa-square';
         }
-    },
-    computed: {
     }
 }

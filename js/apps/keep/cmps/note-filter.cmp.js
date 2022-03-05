@@ -27,7 +27,7 @@ export default {
     },
     computed: {
         enableSearch() {
-            return this.filterBy.type === 'note-img' || this.filterBy.type === 'note-video'
+            return this.filterBy.type === 'note-img' || this.filterBy.type === 'note-video';
         }
     }
 }
