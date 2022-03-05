@@ -33,12 +33,12 @@
     color: #be3434;
 }
 
+.note-actions .actions .btn-note-color-picker:hover {
+    color: #1cd5db;
+}
+
 .note-actions .actions .btn-note-edit:hover,
 .note-actions .actions .btn-note-duplicate:hover,
 .note-actions .actions .btn-note-mail:hover {
     color: #09a523;
-}
-
-.note-actions .actions .btn-note-color-picker:hover {
-    color: #2424a0;
 }
