@@ -25,7 +25,9 @@ function getNote(noteId) {
 }
 
 function saveNote(note) {
-    return storageService.put(NOTES_KEY, note);
+    const newNote = {...note};
+    newNote.isEditable = false;
+    return storageService.put(NOTES_KEY, newNote);
 }
 
 function removeNote(noteId) {
@@ -42,7 +44,9 @@ function addNote(noteType, noteData) {
 }
 
 function copyNote(note) {
-    return storageService.post(NOTES_KEY, {...note});
+    const newNote = {...note};
+    newNote.isEditable = false;
+    return storageService.post(NOTES_KEY, newNote);
 }
 
 function getEmptyNote() {
