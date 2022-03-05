@@ -34,6 +34,7 @@ export default {
             let data = note.info[type];
             if(type === 'todos') data = data.map(todo => todo.txt).join('\n');
             eventBus.emit('makeMailFromNote', data);
+            this.$router.push('../appMail');
         }
     },
     computed: {
