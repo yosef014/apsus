@@ -31,7 +31,7 @@
     top: -.8rem;
     right: -.8rem;
     color:#c71b1b;
-    opacity: 0;
+    display: none;
     cursor: pointer;
 }
 
@@ -60,7 +60,7 @@
 
 .note .note-actions .actions {
     position: absolute;
-    opacity: 0;
+    display: none;
     bottom: 0;
     right: -2rem;
 }
@@ -69,8 +69,7 @@
 .note.editable .note-actions .actions,
 .note:hover .note-pin,
 .note.pinned .note-pin {
-    opacity: 1;
-    transition: opacity 0.2s;
+    display: block;
 }
 
 .note .note-actions .actions i {

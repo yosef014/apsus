@@ -50,6 +50,7 @@
 @media (max-width: 700px) {
     .note-add {
         height: 100px;
+        width: 70%;
         flex-direction: column;
         position: relative;
     }
@@ -59,9 +60,13 @@
     }
 
     .note-add .buttons-container {
-        justify-content: space-between;
+        justify-content: center;
         margin: 0;
         padding: 10px;
+    }
+
+    .note-add .buttons-container > * {
+        margin-left: 5%;
     }
 
     .note-add .buttons-container .add-note-btn {

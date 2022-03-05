@@ -10,6 +10,7 @@ export const noteService = {
     removeNote,
     saveNote,
     addNote,
+    copyNote,
     getInfoType,
     getTodosFromStr,
     getEmptyNote
@@ -38,7 +39,11 @@ function addNote(noteType, noteData) {
         noteType === 'note-todos' ? getTodosFromStr(noteData) : noteData;
 
     return storageService.post(NOTES_KEY, newNote);
-}   
+}
+
+function copyNote(note) {
+    return storageService.post(NOTES_KEY, {...note});
+}
 
 function getEmptyNote() {
     return {

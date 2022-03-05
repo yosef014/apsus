@@ -7,6 +7,7 @@ export default {
             <div class="actions">
                 <i class="fa-solid fa-trash-can btn-note-delete" @click="deleteNote(note.id)"></i>
                 <i class="fa-solid fa-pen-to-square" @click="editNote(note)"></i>
+                <i class="fa-solid fa-copy" @click="duplicateNote(note)"></i>
                 <label :for="inputId" class="fa-solid fa-palette"></label>
                 <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style['background-color']" @input="editColor(note)" />
             </div>
@@ -21,6 +22,9 @@ export default {
         },
         editColor(note) {
             eventBus.emit('saveNote', {note});
+        },
+        duplicateNote(note) {
+            eventBus.emit('duplicateNote', {note});
         }
     },
     computed: {

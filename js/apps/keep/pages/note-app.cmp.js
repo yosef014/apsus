@@ -9,7 +9,7 @@ export default {
         <section class="note-app">
             <note-filter @filtered="setFilter" />
             <note-add @addNote="addNote" />
-            <section v-if="notes && isNotePinned()" class="pinned-note-list">
+            <section v-if="notes && isNotePinned" class="pinned-note-list">
                 <p>Pinned:</p>
                 <note-list v-if="notes" :notes="pinnedNotesForDisplay" @delete="deleteNote" />
                 <p>Others:</p>
@@ -33,7 +33,8 @@ export default {
                 .then(notes => this.notes = notes);
                 
         eventBus.on('saveNote', this.saveNoteEdit);
-        eventBus.on('toggleEdit', this.toggleEditMode)
+        eventBus.on('toggleEdit', this.toggleEditMode);
+        eventBus.on('duplicateNote', this.duplicateNote)
     },
     methods: {
         findNoteIdx(noteId) {
@@ -60,6 +61,13 @@ export default {
                     this.notes.push(newNote);
                 })
         },
+        duplicateNote({note}) {
+            noteService.copyNote(note)
+                        .then(newNote => {
+                            const noteIdx = this.notes.indexOf(note);
+                            this.notes.splice(noteIdx, 0, JSON.parse(JSON.stringify(newNote)));
+                        })
+        },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
@@ -79,9 +87,6 @@ export default {
                 
                 return !this.filterBy.txt;
             })
-        },
-        isNotePinned() {
-            return this.notes.some(note => note.isPinned);
         }
     },
     computed: {
@@ -90,6 +95,9 @@ export default {
         },
         pinnedNotesForDisplay() {
             return this.filterNotes(this.notes.filter(note => note.isPinned))
+        },
+        isNotePinned() {
+            return this.notes.some(note => note.isPinned);
         }
     }
 }
