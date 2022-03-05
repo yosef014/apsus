@@ -6,9 +6,9 @@ export default {
             <i :class="noteTypeIcon" :title="noteTypeIconTitle"></i>
             <div class="actions">
                 <i class="fa-solid fa-trash-can btn-note-delete" @click="deleteNote(note.id)" title="Delete Note"></i>
-                <i class="fa-solid fa-pen-to-square" @click="editNote(note)" title="Edit Note"></i>
-                <i class="fa-solid fa-copy" @click="duplicateNote(note)" title="Duplicate Note"></i>
-                <label :for="inputId" class="fa-solid fa-palette"  title="Pick Note Color"></label>
+                <i class="fa-solid fa-pen-to-square btn-note-edit" @click="editNote(note)" title="Edit Note"></i>
+                <i class="fa-solid fa-copy btn-note-duplicate" @click="duplicateNote(note)" title="Duplicate Note"></i>
+                <label :for="inputId" class="fa-solid fa-palette btn-note-color-picker"  title="Pick Note Color"></label>
                 <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style['background-color']" @input="editColor(note)" />
             </div>
         </section>

@@ -28,65 +28,8 @@
     position: relative;
 }
 
-.note .note-pin {
-    position: absolute;
-    top: -.8rem;
-    right: -.8rem;
-    color:#c71b1b;
-    display: none;
-    cursor: pointer;
-}
-
-.note .note-pin:hover,
-.note .note-pin .pinned {
-    color: #2424a0;
-    
-}
-
-.note .note-pin .pinned:hover {
-    color:#c71b1b;
-}
-
 .note .note-preview {
     margin-bottom: 1rem;
-}
-
-.note .note-actions {
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.note .note-actions i:first-of-type {
-    flex:1;
-}
-
-.note .note-actions .actions {
-    position: absolute;
-    display: none;
-    bottom: 0;
-    right: -3rem;
-}
-
-.note:hover .note-actions .actions,
-.note:active .note-actions .actions,
-.note.editable .note-actions .actions,
-.note:hover .note-pin,
-.note:active .note-pin,
-.note.pinned .note-pin {
-    display: block;
-}
-
-.note .note-actions .actions i {
-    margin-right: 1em;
-    cursor: pointer;
-}
-
-.note .note-actions .actions label {
-    cursor: pointer;
-}
-
-.note .actions .btn-note-delete:hover {
-    color: red;
 }
 
 .note .note-edit {
@@ -94,13 +37,12 @@
     padding-bottom: 1rem;
 }
 
-/* TODO NOTE */
-.note .todo.completed {
-    text-decoration: line-through;
-}
-
 .note .todo:not(:last-of-type) {
     margin-bottom: 10px;
+}
+
+.note .todo.completed {
+    text-decoration: line-through;
 }
 
 .note .todo-txt {

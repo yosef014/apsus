@@ -1,0 +1,23 @@
+.note-pin {
+    position: absolute;
+    top: -.8rem;
+    right: -.8rem;
+    color:#09a523;
+    display: none;
+    cursor: pointer;
+}
+
+.note-pin:hover,
+.note-pin .pinned {
+    color: #2424a0;
+}
+
+.note-pin .pinned:hover {
+    color:#09a523;
+}
+
+.note:hover .note-pin,
+.note:active .note-pin,
+.note.pinned .note-pin {
+    display: block;
+}

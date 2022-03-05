@@ -1,0 +1,43 @@
+.note-actions {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.note-actions i:first-of-type {
+    flex:1;
+}
+
+.note-actions .actions {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    right: -3rem;
+}
+
+.note:hover .note-actions .actions,
+.note:active .note-actions .actions,
+.note.editable .note-actions .actions {
+    display: block;
+}
+
+.note-actions .actions i {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.note-actions .actions label {
+    cursor: pointer;
+}
+
+.note-actions .actions .btn-note-delete:hover {
+    color: #be3434;
+}
+
+.note-actions .actions .btn-note-edit:hover,
+.note-actions .actions .btn-note-duplicate:hover {
+    color: #09a523;
+}
+
+.note-actions .actions .btn-note-color-picker:hover {
+    color: #2424a0;
+}
