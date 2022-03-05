@@ -79,6 +79,7 @@ export default {
     },
     created() {
         eventBus.on('makeMailFromNote', (data)=>{
+<<<<<<< HEAD
             const mail = { folder: 'inbox', subject: 'mail from note',
             from: 'notes', to: 'me',
             body: `data`,
@@ -86,6 +87,9 @@ export default {
             id:  Date.now()}
             storageService.post(MAILDB_KEY, mail);
             console.log('add note to inbox!', data);
+=======
+            console.log('hiiiiiiiiiiiiiiiiiiiiiiii', data);
+>>>>>>> c9e4af92a65c81921ac089bc033d7da2649687b2
         })      
           this.$router.push('/appMail/inbox')
         

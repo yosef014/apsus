@@ -1,6 +1,6 @@
 import { utilService } from '../../../services/util-service.js';
-import { storageService } from '../../../services/async-storage-service.js';
 
+import { storageService } from '../../../services/async-storage-service.js';
 const NOTES_KEY = 'notes';
 _createNotes();
 
@@ -73,6 +73,7 @@ function getInfoType(noteType) {
 function getTodosFromStr(todosStr) {
     return todosStr.split(',').map(todo => ({txt: todo, doneAt: null}));
 }
+
 
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
