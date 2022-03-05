@@ -1,4 +1,5 @@
 import { eventBus } from '../../../services/eventBus-service.js';
+import {noteService} from '../../../services/note-service.js';
 export default {
     props: ['note'],
     template: `
@@ -7,6 +8,7 @@ export default {
             <div class="actions">
                 <i class="fa-solid fa-trash-can btn-note-delete" @click="deleteNote(note.id)" title="Delete Note"></i>
                 <i class="fa-solid fa-pen-to-square btn-note-edit" @click="editNote(note)" title="Edit Note"></i>
+                <i @click="sendNoteToMail">X</i>
                 <i class="fa-solid fa-copy btn-note-duplicate" @click="duplicateNote(note)" title="Duplicate Note"></i>
                 <label :for="inputId" class="fa-solid fa-palette btn-note-color-picker"  title="Pick Note Color"></label>
                 <input :id="inputId" style="opacity: 0;" type="color" v-model="note.style['background-color']" @input="editColor(note)" />
@@ -25,6 +27,13 @@ export default {
         },
         duplicateNote(note) {
             eventBus.emit('duplicateNote', {note});
+        },
+        sendNoteToMail(note) {
+            const type = getInfoType(note.type);
+            let data = note.info[type];
+            // if(type === 'todos')
+
+            eventBus.emit('makeMailFromNote', data);
         }
     },
     computed: {
