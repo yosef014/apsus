@@ -78,7 +78,7 @@ export default {
 
     },
     created() {
-        eventBus.on('makeMAilFromNote', (data)=>{
+        eventBus.on('makeMailFromNote', (data)=>{
             console.log('hiiiiiiiiiiiiiiiiiiiiiiii', data);
         })      
           this.$router.push('/appMail/inbox')

@@ -1,5 +1,5 @@
 import { eventBus } from '../../../services/eventBus-service.js';
-import {noteService} from '../../../services/note-service.js';
+import { noteService } from '../services/note-service.js';
 
 export default {
     props: ['note'],
@@ -30,10 +30,9 @@ export default {
             eventBus.emit('duplicateNote', {note});
         },
         sendNoteToMail(note) {
-            const type = getInfoType(note.type);
+            const type = noteService.getInfoType(note.type);
             let data = note.info[type];
             // if(type === 'todos')
-
             eventBus.emit('makeMailFromNote', data);
         }
     },
