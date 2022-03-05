@@ -6,6 +6,8 @@
     font-size: 1.2rem;
     width: 95%;
     overflow-wrap: break-word;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .note:hover {
@@ -62,12 +64,14 @@
     position: absolute;
     display: none;
     bottom: 0;
-    right: -2rem;
+    right: -3rem;
 }
 
 .note:hover .note-actions .actions,
+.note:active .note-actions .actions,
 .note.editable .note-actions .actions,
 .note:hover .note-pin,
+.note:active .note-pin,
 .note.pinned .note-pin {
     display: block;
 }
@@ -97,7 +101,6 @@
 
 .note .todo:not(:last-of-type) {
     margin-bottom: 10px;
-
 }
 
 .note .todo-txt {

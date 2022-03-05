@@ -71,12 +71,11 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
-        filterNotes(notes = this.notes) {
-            let displayedNotes = notes.slice().reverse();
-            if(!this.filterBy) return displayedNotes;
+        filterNotes(notes) {
+            if(!this.filterBy) return notes;
 
             const txtReg = new RegExp(this.filterBy.txt, 'i');
-            return displayedNotes.filter(note => {
+            return notes.filter(note => {
 
                 if(this.filterBy.type && this.filterBy.type !== note.type) return false;
 
@@ -91,7 +90,7 @@ export default {
     },
     computed: {
         notesForDisplay() {
-            return this.filterNotes(this.notes.filter(note => !note.isPinned));
+            return this.filterNotes(this.notes.filter(note => !note.isPinned).reverse());
         },
         pinnedNotesForDisplay() {
             return this.filterNotes(this.notes.filter(note => note.isPinned))
