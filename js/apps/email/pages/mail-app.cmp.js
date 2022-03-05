@@ -4,6 +4,7 @@ import { storageService } from '../../../services/async-storage-service.js';
 import mailList from '../cmps/mail-list.cmp.js'
 import mailFilter from '../cmps/mail-filter.cmp.js'
 import mailSender from '../cmps/mail-sender.cmp.js'
+import { eventBus } from '../../../services/eventBus-service.js';
 
 
 
@@ -77,7 +78,10 @@ export default {
 
     },
     created() {
-        this.$router.push('/appMail/inbox')
+        eventBus.on('makeMAilFromNote', (data)=>{
+            console.log('hiiiiiiiiiiiiiiiiiiiiiiii', data);
+        })      
+          this.$router.push('/appMail/inbox')
         
     },
     computed: {
