@@ -74,6 +74,7 @@ function getTodosFromStr(todosStr) {
     return todosStr.split(',').map(todo => ({txt: todo, doneAt: null}));
 }
 
+
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
     if(!notes || !notes.length) {

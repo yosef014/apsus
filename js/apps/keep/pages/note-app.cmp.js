@@ -89,8 +89,7 @@ export default {
             })
         },
         makeNoteFromMail(txt) {
-            console.log(txt);
-            this.addNote('note-txt', {txt});
+            this.addNote({type: 'note-txt', data: txt});
         }
     },
     computed: {
