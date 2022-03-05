@@ -32,6 +32,7 @@ export default {
         noteService.query()
                 .then(notes => this.notes = notes);
                 
+        eventBus.on('makeNoteFromMail', this.makeNoteFromMail)
         eventBus.on('saveNote', this.saveNoteEdit);
         eventBus.on('toggleEdit', this.toggleEditMode);
         eventBus.on('duplicateNote', this.duplicateNote)
@@ -86,6 +87,10 @@ export default {
                 
                 return !this.filterBy.txt;
             })
+        },
+        makeNoteFromMail(txt) {
+            console.log(txt);
+            addNote('note-txt', {txt});
         }
     },
     computed: {
