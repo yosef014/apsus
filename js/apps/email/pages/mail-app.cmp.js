@@ -87,9 +87,6 @@ export default {
             id:  Date.now()}
             storageService.post(MAILDB_KEY, mail);
             console.log('add note to inbox!', data);
-
-            console.log('hiiiiiiiiiiiiiiiiiiiiiiii', data);
-
         })      
           this.$router.push('/appMail/inbox')
         
