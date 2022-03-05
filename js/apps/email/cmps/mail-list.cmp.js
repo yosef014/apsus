@@ -46,6 +46,7 @@ export default {
     methods: {
         sendMailToKeep(mail){
             eventBus.emit('makeNoteFromMail', mail.body)
+            this.$router.push('../appKeep')
         },
         museOn(id) {
             this.editBar[id] = id
