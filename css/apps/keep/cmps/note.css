@@ -1,11 +1,10 @@
 .note {
     display: inline-block;
-    flex-direction: column;
     border: 1px solid #e0e0e0;
     margin: 1rem;
     padding: 1rem 1rem 0;
-    width: 23vw;
     font-size: 1.2rem;
+    width: 95%;
     overflow-wrap: break-word;
 }
 

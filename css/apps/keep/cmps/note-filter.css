@@ -3,8 +3,8 @@
     position: absolute;
     height: 40px;
     top: 5px;
-    left: 150px;
-    width: 700px;
+    left: 120px;
+    width: 50%;
     box-shadow: 1px 1px 0px 2px #d8dadb50;
     border-radius: 10px;
 }
@@ -29,4 +29,10 @@
     border-bottom-left-radius: 0;
     padding-left: 5px;
     border-left: 1px solid #c0c2c3;
+}
+
+@media (min-width: 900px) {
+    .note-filter {
+        width: 700px;
+    }
 }

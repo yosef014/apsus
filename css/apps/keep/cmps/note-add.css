@@ -37,7 +37,7 @@
     font-size: 1.3rem
 }
 
-.note-add .buttons-container i:last-of-type {
+.note-add .buttons-container .add-note-btn {
     color: #2cac2c;
 }
 
@@ -45,4 +45,28 @@
 .note-add .buttons-container .selected {
     color: #111113;
     font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .note-add {
+        height: 100px;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .note-add input {
+        padding-right: 20%;
+    }
+
+    .note-add .buttons-container {
+        justify-content: space-between;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .note-add .buttons-container .add-note-btn {
+        position: absolute;
+        top: 18px;
+        right: 0;
+    }
 }

@@ -1,14 +1,39 @@
+.note-list {
+    width: 95%;
+    margin: 0 auto;
+}
+
 .note-list ul {
     list-style: none;
     padding: 0;
 }
 
 .note-list > ul {
-    column-count: 4;
+        column-count: 2;
+        column-gap: 0;
 }
 
 .pinned-note-list > p{
     margin-left: 1rem;
     font-size: 1.3rem;
     color: #757575;
+}
+
+@media (min-width: 1000px) {
+    .note-list > ul {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1400px) {
+    .note-list > ul {
+        column-count: 4;
+    }
+}
+
+
+@media (min-width: 1640px) {
+    .note-list > ul {
+        column-count: 5;
+    }
 }
