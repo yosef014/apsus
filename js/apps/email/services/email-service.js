@@ -6,6 +6,7 @@ export const emailService = {
   
 }
 const MAILDB_KEY = 'MailDb'
+
 function sortBy(emails, sort) {
     if (sort === 'date' || sort === '') return emails.sort((a, b) => (a.sentAt > b.sentAt) ? -1 : 1);
     else if (sort === 'name') return emails.sort((a, b) => a.from.localeCompare(b.from));
