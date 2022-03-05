@@ -6,8 +6,7 @@
 .note-list ul {
     list-style: none;
     padding: 0;
-    columns: 300px;
-    column-gap: 0;
+    columns: 5 350px;
 }
 
 .pinned-note-list > p{
